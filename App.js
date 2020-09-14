@@ -1,14 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-//import { HeaderFooter } from "./app/components/HeaderFooter";
+import HeaderFooter from "./components/HeaderFooter";
 
 export default function App() {
-  return (
-    <View>
-      <Text></Text>
-    </View>
-  );
+  return <HeaderFooter />;
 }
 
 const styles = StyleSheet.create({
