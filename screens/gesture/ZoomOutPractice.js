@@ -6,6 +6,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Button
+          title="Go to scroll"
+          onPress={() => this.props.navigation.navigate("Scroll")}
+        />
         <Text style={styles.textWrapper}>Practice Zoom out here </Text>
         <View style={styles.zoomWrapper}>
           <ReactNativeZoomableView
