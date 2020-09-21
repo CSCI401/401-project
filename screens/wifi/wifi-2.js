@@ -1,8 +1,9 @@
-import React from "react";
 import { StatusBar } from "expo-status-bar";
+import React from "react";
+
+import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
 import {
   StyleSheet,
   Text,
@@ -16,33 +17,27 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeHello = ({ navigation }) => {
+const Wifi2 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          Hello,{"\n"}I am Daisy.{"\n"}
-          {"\n"}What's your name?
+          First, you need to swipe down from the top.
         </Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
         <Button
           title="Next"
           color="#f194ff"
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("Wifi2")}
         />
-      </View>
-      <View style={styles.textInputContainer}>
-        <TextInput style={styles.textInput} />
       </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
+export default Wifi2;
+// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -88,5 +83,3 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
 });
-
-export default WelcomeHello;
