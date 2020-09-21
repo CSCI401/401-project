@@ -9,11 +9,18 @@ import {
   SafeAreaView,
 } from "react-native";
 import Constants from "expo-constants";
+import * as Speech from "expo-speech";
 
 export default class App extends React.Component {
+  speak() {
+    var thingToSay =
+      "Drag your finger from the bottom of the screen to the top to scroll!";
+    Speech.speak(thingToSay);
+  }
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <Button title="Press to hear some words" onPress={this.speak} />
         <ScrollView style={styles.scrollView}>
           <Text style={styles.text}>
             Drag your finger from the bottom of the screen to the top to scroll!{" "}
