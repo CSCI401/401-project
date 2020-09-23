@@ -29,14 +29,17 @@ const WelcomeHello = ({ navigation }) => {
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
-        <Button
-          title="Next"
-          color="#f194ff"
-          onPress={() => navigation.navigate("Wifi1")}
-        />
       </View>
       <View style={styles.textInputContainer}>
-        <TextInput style={styles.textInput} />
+        <TextInput style={styles.textInput} placeholder="Insert Name Here" />
+      </View>
+      <View style={styles.appButtonView}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("WelcomeSpeech")}
+          style={styles.appButtonContainer}
+        >
+          <Text style={styles.appButtonText}>Next</Text>
+        </TouchableOpacity>
       </View>
       <Footer></Footer>
     </SafeAreaView>
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     height: 98,
   },
   textInputContainer: {
-    top: "70%",
+    top: "60%",
     position: "relative",
     height: "7%",
     width: "100%",
@@ -86,6 +89,27 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 3,
     fontSize: 80,
+    textAlign: "center",
+  },
+  appButtonView: {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonContainer: {
+    top: "1020%",
+    position: "relative",
+    width: "45%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonText: {
+    fontSize: 60,
   },
 });
 

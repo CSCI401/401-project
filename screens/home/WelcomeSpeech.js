@@ -9,13 +9,14 @@ import {
   View,
   SafeAreaView,
   Image,
+  TextInput,
   Button,
   TouchableWithoutFeedback,
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
 
-function WelcomeSpeech() {
+const WelcomeSpeech = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -28,10 +29,24 @@ function WelcomeSpeech() {
           source={require("../../assets/speaker.png")}
         />
       </View>
+      <View style={styles.buttonView}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Wifi1")}
+          style={styles.YesButtonContainer}
+        >
+          <Text style={styles.YesButtonText}>Yes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Wifi1")}
+          style={styles.NoButtonContainer}
+        >
+          <Text style={styles.NoButtonText}>No</Text>
+        </TouchableOpacity>
+      </View>
       <Footer></Footer>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   outerContainer: {
@@ -59,6 +74,43 @@ const styles = StyleSheet.create({
     top: "170%",
     width: 121,
     height: 98,
+  },
+  buttonView: {
+    width: "100%",
+    flex: 1,
+    flexDirection: "row",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "2%",
+  },
+  YesButtonContainer: {
+    top: "25%",
+    width: "25%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2%",
+  },
+  YesButtonText: {
+    fontSize: 60,
+  },
+  NoButtonContainer: {
+    top: "25%",
+    width: "25%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2%",
+  },
+  NoButtonText: {
+    fontSize: 60,
   },
 });
 
