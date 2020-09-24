@@ -8,6 +8,9 @@ import Wifi1 from "./screens/wifi/wifi-1.js";
 import Wifi2 from "./screens/wifi/wifi-2.js";
 import Wifi3 from "./screens/wifi/wifi-3.js";
 import Wifi4 from "./screens/wifi/wifi-4.js";
+import ZoomInPractice from "./screens/gesture/ZoomInPractice.js";
+import ZoomOutPractice from "./screens/gesture/ZoomOutPractice.js";
+import ScrollPractice from "./screens/gesture/ScrollPractice.js";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -51,6 +54,21 @@ export default function App() {
         <Stack.Screen
           name="Wifi4"
           component={Wifi4}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="ZoomIn"
+          component={ZoomInPractice}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="ZoomOut"
+          component={ZoomOutPractice}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Scroll"
+          component={ScrollPractice}
           options={{ header: () => null }}
         />
       </Stack.Navigator>

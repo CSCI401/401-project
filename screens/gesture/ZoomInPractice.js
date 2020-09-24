@@ -8,7 +8,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Button
           title="Go to zoom #2"
-          onPress={() => this.props.navigation.navigate("Gesture1")}
+          onPress={() => this.props.navigation.navigate("ZoomOut")}
         />
         <Text style={styles.textWrapper}>Practice Zoom in here </Text>
         <View style={styles.zoomWrapper}>
