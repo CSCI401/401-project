@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 
 import { Component } from "react";
-import Wifi2 from "./wifi-2.js";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import {
@@ -18,17 +17,23 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Wifi1 = ({ navigation }) => {
+const Wifi4 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Hello, Bob. Welcome to the wifi tutorial!
-        </Text>
+        <Text style={styles.text}>Next, click on the setting icon.</Text>
+        <Image
+          style={styles.image}
+          source={require("../../assets/wifi4.png")}
+        />
+        <Image
+          style={styles.image}
+          source={require("../../assets/wifi4-1.png")}
+        />
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi2")}
+          onPress={() => navigation.navigate("Wifi4")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -39,7 +44,7 @@ const Wifi1 = ({ navigation }) => {
   );
 };
 
-export default Wifi1;
+export default Wifi4;
 // <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
@@ -58,15 +63,14 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
   image: {
-    justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     top: "112%",
     width: 121,
-    height: 98,
+    height: 200,
   },
   textInputContainer: {
     top: "60%",

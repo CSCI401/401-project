@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import Wifi3 from "./wifi-3.js";
 
 const Wifi2 = ({ navigation }) => {
   return (
@@ -23,13 +24,19 @@ const Wifi2 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          First, you need to swipe down from the top.
+          First Bob, you need to swipe down from the top.
         </Text>
-        <Button
-          title="Next"
-          color="#f194ff"
-          onPress={() => navigation.navigate("Wifi2")}
+        <Image
+          style={styles.image}
+          source={require("../../assets/wifi2.png")}
         />
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Wifi3")}
+          style={styles.appButtonContainer}
+        >
+          <Text style={styles.appButtonText}>Next</Text>
+        </TouchableOpacity>
       </View>
       <Footer></Footer>
     </SafeAreaView>
@@ -55,18 +62,17 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
   image: {
-    justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     top: "112%",
     width: 121,
-    height: 98,
+    height: 200,
   },
   textInputContainer: {
-    top: "70%",
+    top: "60%",
     position: "relative",
     height: "7%",
     width: "100%",
@@ -81,5 +87,26 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 3,
     fontSize: 80,
+    textAlign: "center",
+  },
+  appButtonView: {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonContainer: {
+    top: "1020%",
+    position: "relative",
+    width: "45%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonText: {
+    fontSize: 60,
   },
 });
