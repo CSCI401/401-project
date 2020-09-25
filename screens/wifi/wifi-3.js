@@ -16,23 +16,20 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import Wifi3 from "./wifi-3.js";
 
-const Wifi2 = ({ navigation }) => {
+const Wifi3 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          First Bob, you need to swipe down from the top.
-        </Text>
+        <Text style={styles.text}>You should be able to see this page.</Text>
         <Image
           style={styles.image}
-          source={require("../../assets/wifi2.png")}
+          source={require("../../assets/wifi3.png")}
         />
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi3")}
+          onPress={() => navigation.navigate("Wifi4")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -43,7 +40,7 @@ const Wifi2 = ({ navigation }) => {
   );
 };
 
-export default Wifi2;
+export default Wifi3;
 // <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {

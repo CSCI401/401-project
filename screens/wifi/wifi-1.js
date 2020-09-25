@@ -26,8 +26,6 @@ const Wifi1 = ({ navigation }) => {
         <Text style={styles.text}>
           Hello, Glory. {"\n"}Welcome to the wifi tutorial!
         </Text>
-      </View>
-      <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi2")}
           style={styles.appButtonContainer}
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
     height: 98,
   },
   textInputContainer: {
-    top: "70%",
+    top: "60%",
     position: "relative",
     height: "7%",
     width: "100%",
@@ -85,6 +83,27 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 3,
     fontSize: 80,
+    textAlign: "center",
+  },
+  appButtonView: {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonContainer: {
+    top: "1020%",
+    position: "relative",
+    width: "45%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonText: {
+    fontSize: 60,
   },
   appButtonView: {
     width: "100%",

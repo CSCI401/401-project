@@ -27,13 +27,27 @@ export default class App extends React.Component {
             {"\n"}
             {"\n"}
             {"\n"}
+            {"\n"}
+            {"\n"}
             Keep scrolling.... {"\n"}
             {"\n"}
-            {"\n"}Keep scrolling.... {"\n"}
+            {"\n"}
+            {"\n"}
+            {"\n"}
             {"\n"}
             {"\n"}Keep scrolling.... {"\n"}
+            {"\n"}
+            {"\n"}
+            {"\n"}
+            {"\n"}
+            {"\n"}Keep scrolling.... {"\n"}
+            {"\n"}
+            {"\n"}
+            {"\n"}
             {"\n"}
             {"\n"}Almost there.... {"\n"}
+            {"\n"}
+            {"\n"}
             {"\n"}
             {"\n"}Nice work! This is the hidden message :) have a great day!{" "}
             {"\n"}
