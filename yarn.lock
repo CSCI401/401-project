@@ -5112,6 +5112,11 @@ source-map@^0.7.3:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
 
+speech@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/speech/-/speech-0.2.1.tgz#8b799ba6b44be4e2f422fa5b9f1e0fde736553c0"
+  integrity sha1-i3mbprRL5OL0Ivpbnx4P3nNlU8A=
+
 split-on-first@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/split-on-first/-/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"

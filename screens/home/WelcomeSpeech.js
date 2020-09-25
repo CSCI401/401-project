@@ -31,13 +31,13 @@ const WelcomeSpeech = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("WelcomeSpeech2")}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("WelcomeSpeech2")}
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>

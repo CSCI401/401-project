@@ -16,23 +16,23 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeSpeech2 = ({ navigation }) => {
+const WelcomeThankYou = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>At any point, click{"\n"}</Text>
+        <Text style={styles.text}>
+          Thanks for watching the video.{"\n"}
+          {"\n"}Now we will go to the home screen.
+        </Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
       </View>
-      <View style={styles.container2}>
-        <Text style={styles.text}>to have the text read out loud</Text>
-      </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeIntroductoryVideo")}
+          onPress={() => navigation.navigate("WelcomeTutorials")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    top: "90%",
+    top: "110%",
     width: 121,
     height: 98,
   },
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
+    top: "1150%",
     position: "relative",
     width: "45%",
     borderWidth: 3,
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeSpeech2;
+export default WelcomeThankYou;

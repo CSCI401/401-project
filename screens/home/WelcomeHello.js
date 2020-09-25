@@ -15,8 +15,10 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import * as Speech from "expo-speech";
 
 const WelcomeHello = ({ navigation }) => {
+  var textToSpeak = "Hello, I am Daisy. What's your name?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -29,6 +31,11 @@ const WelcomeHello = ({ navigation }) => {
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
+      </View>
+      <View style={styles.speakerContainer}>
+        <TouchableOpacity onPress={() => Speech.speak(textToSpeak)}>
+          <Image source={require("../../assets/speaker.png")} />
+        </TouchableOpacity>
       </View>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput} placeholder="Insert Name Here" />
@@ -72,6 +79,11 @@ const styles = StyleSheet.create({
     top: "112%",
     width: 121,
     height: 98,
+  },
+  speakerContainer: {
+    top: "58%",
+    alignSelf: "center",
+    position: "absolute",
   },
   textInputContainer: {
     top: "60%",

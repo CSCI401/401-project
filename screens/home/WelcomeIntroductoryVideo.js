@@ -16,23 +16,24 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeSpeech2 = ({ navigation }) => {
+const WelcomeIntroductoryVideo = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>At any point, click{"\n"}</Text>
+        <Text style={styles.text}>Let's explain this app.{"\n"}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
-      </View>
-      <View style={styles.container2}>
-        <Text style={styles.text}>to have the text read out loud</Text>
+        <Image
+          style={styles.image2}
+          source={require("../../assets/IntroductoryVideoScreenshot.png")}
+        />
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeIntroductoryVideo")}
+          onPress={() => navigation.navigate("WelcomeThankYou")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -76,9 +77,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    top: "90%",
+    top: "70%",
     width: 121,
     height: 98,
+  },
+  image2: {
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: "130%",
+    width: 670,
+    height: 370,
   },
   appButtonView: {
     width: "100%",
@@ -87,7 +96,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
+    top: "1150%",
     position: "relative",
     width: "45%",
     borderWidth: 3,
@@ -102,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeSpeech2;
+export default WelcomeIntroductoryVideo;
