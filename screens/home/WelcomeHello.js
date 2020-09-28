@@ -15,25 +15,22 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import * as Speech from "expo-speech";
+import TTS from "../../components/TextToSpeech";
 
 const WelcomeHello = ({ navigation }) => {
-  var textToSpeak = "Hello, I am Daisy. What's your name?";
+  var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Hello,{"\n"}I am Daisy.{"\n"}
-          {"\n"}What's your name?
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
       </View>
       <View style={styles.speakerContainer}>
-        <TouchableOpacity onPress={() => Speech.speak(textToSpeak)}>
+        <TouchableOpacity onPress={() => TTS(textToSpeak)}>
           <Image source={require("../../assets/speaker.png")} />
         </TouchableOpacity>
       </View>
