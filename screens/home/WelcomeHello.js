@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -29,11 +30,7 @@ const WelcomeHello = ({ navigation }) => {
           source={require("../../assets/speaker.png")}
         />
       </View>
-      <View style={styles.speakerContainer}>
-        <TouchableOpacity onPress={() => TTS(textToSpeak)}>
-          <Image source={require("../../assets/speaker.png")} />
-        </TouchableOpacity>
-      </View>
+      <Speaker text={textToSpeak}></Speaker>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput} placeholder="Insert Name Here" />
       </View>
@@ -76,11 +73,6 @@ const styles = StyleSheet.create({
     top: "112%",
     width: 121,
     height: 98,
-  },
-  speakerContainer: {
-    top: "58%",
-    alignSelf: "center",
-    position: "absolute",
   },
   textInputContainer: {
     top: "60%",
