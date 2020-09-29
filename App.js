@@ -8,6 +8,8 @@ import Wifi1 from "./screens/wifi/wifi-1.js";
 import Wifi2 from "./screens/wifi/wifi-2.js";
 import Wifi3 from "./screens/wifi/wifi-3.js";
 import Wifi4 from "./screens/wifi/wifi-4.js";
+import Wifi5 from "./screens/wifi/wifi-5.js";
+import Wifi6 from "./screens/wifi/wifi-6.js";
 import ZoomInPractice from "./screens/gesture/ZoomInPractice.js";
 import ZoomOutPractice from "./screens/gesture/ZoomOutPractice.js";
 import ScrollPractice from "./screens/gesture/ScrollPractice.js";
@@ -77,6 +79,76 @@ export default function App() {
         <Stack.Screen
           name="Wifi4"
           component={Wifi4}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi5"
+          component={Wifi5}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi6"
+          component={Wifi6}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi7"
+          component={Wifi7}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi8"
+          component={Wifi8}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi9"
+          component={Wifi9}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi10"
+          component={Wifi10}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi11"
+          component={Wifi11}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi12"
+          component={Wifi12}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi13"
+          component={Wifi13}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Email1"
+          component={Email1}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Email2"
+          component={Email2}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Email3"
+          component={Email3}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Email4"
+          component={Email4}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Email5"
+          component={Email5}
           options={{ header: () => null }}
         />
         <Stack.Screen
