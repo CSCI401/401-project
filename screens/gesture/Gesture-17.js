@@ -18,25 +18,25 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,\nwe will go through the buttons on your tablet";
+var textToSpeak = "Touch the screen and pinch your fingers to zoom in\n";
 
-const Gesture2 = ({ navigation }) => {
+const Gesture17 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          First, we will go through the buttons on your tablet.
+          Touch the screen and pinch your fingers to zoom in
         </Text>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <Button
         title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture3")}
+        onPress={() => navigation.navigate("Gesture18")}
       />
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture3")}
+          onPress={() => navigation.navigate("Gesture18")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -47,7 +47,7 @@ const Gesture2 = ({ navigation }) => {
   );
 };
 
-export default Gesture2;
+export default Gesture17;
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    fontSize: 80,
+    fontSize: 60,
   },
   appButtonText: {
     fontSize: 80,

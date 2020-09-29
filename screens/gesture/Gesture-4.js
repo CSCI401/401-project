@@ -18,25 +18,33 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,\nwe will go through the buttons on your tablet";
+var textToSpeak = "This is the back button\n";
 
-const Gesture2 = ({ navigation }) => {
+const Gesture4 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          First, we will go through the buttons on your tablet.
-        </Text>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        <Text style={styles.text}>This is the back button</Text>
       </View>
+      <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      <Image
+        style={styles.image}
+        source={require("../../assets/firescreenshot.png")}
+        resizeMode="stretch"
+      />
+      <Image
+        style={styles.backimage}
+        source={require("../../assets/backbutton.png")}
+        resizeMode="stretch"
+      />
       <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture3")}
+        title="Next gesture page"
+        onPress={() => navigation.navigate("Gesture5")}
       />
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture3")}
+          onPress={() => navigation.navigate("Gesture5")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -47,7 +55,7 @@ const Gesture2 = ({ navigation }) => {
   );
 };
 
-export default Gesture2;
+export default Gesture4;
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -58,7 +66,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "absolute",
-    top: "20%",
+    top: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -67,7 +75,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    fontSize: 80,
+    fontSize: 60,
   },
   appButtonText: {
     fontSize: 80,
@@ -87,11 +95,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
+    position: "relative",
     top: "20%",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
     textAlign: "center",
+    paddingRight: 200,
   },
   appButtonView: {
     width: "100%",
@@ -112,5 +121,21 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  image: {
+    // flex: 1,
+    width: "45%",
+    height: "50%",
+    position: "relative",
+    top: 400,
+    left: 150,
+  },
+  image: {
+    // flex: 1,
+    width: "30%",
+    height: "30%",
+    position: "relative",
+    top: 600,
+    left: 150,
   },
 });

@@ -28,6 +28,26 @@ import ZoomOutPractice from "./screens/gesture/ZoomOutPractice.js";
 import ScrollPractice from "./screens/gesture/ScrollPractice.js";
 import Gesture1 from "./screens/gesture/Gesture-1";
 import Gesture2 from "./screens/gesture/Gesture-2";
+import Gesture3 from "./screens/gesture/Gesture-3";
+import Gesture4 from "./screens/gesture/Gesture-4";
+import Gesture5 from "./screens/gesture/Gesture-5";
+import Gesture6 from "./screens/gesture/Gesture-6";
+import Gesture7 from "./screens/gesture/Gesture-7";
+import Gesture8 from "./screens/gesture/Gesture-8";
+import Gesture9 from "./screens/gesture/Gesture-9";
+import Gesture10 from "./screens/gesture/Gesture-10";
+import Gesture11 from "./screens/gesture/Gesture-11";
+import Gesture12 from "./screens/gesture/Gesture-12";
+import Gesture13 from "./screens/gesture/Gesture-13";
+import Gesture14 from "./screens/gesture/Gesture-14";
+import Gesture15 from "./screens/gesture/Gesture-15";
+import Gesture16 from "./screens/gesture/Gesture-16";
+import Gesture17 from "./screens/gesture/Gesture-17";
+import Gesture18 from "./screens/gesture/Gesture-18";
+import Gesture19 from "./screens/gesture/Gesture-19";
+import Gesture20 from "./screens/gesture/Gesture-20";
+import Gesture21 from "./screens/gesture/Gesture-21";
+import Gesture22 from "./screens/gesture/Gesture-22";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -172,7 +192,7 @@ export default function App() {
           options={{ header: () => null }}
         />
         <Stack.Screen
-          name="ZoomOut"
+          name="ZoomOutPractice"
           component={ZoomOutPractice}
           options={{ header: () => null }}
         />
@@ -189,6 +209,106 @@ export default function App() {
         <Stack.Screen
           name="Gesture2"
           component={Gesture2}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture3"
+          component={Gesture3}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture4"
+          component={Gesture4}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture5"
+          component={Gesture5}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture6"
+          component={Gesture6}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture7"
+          component={Gesture7}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture8"
+          component={Gesture8}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture9"
+          component={Gesture9}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture10"
+          component={Gesture10}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture11"
+          component={Gesture11}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture12"
+          component={Gesture12}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture13"
+          component={Gesture13}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture14"
+          component={Gesture14}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture15"
+          component={Gesture15}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture16"
+          component={Gesture16}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture17"
+          component={Gesture17}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture18"
+          component={Gesture18}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture19"
+          component={Gesture19}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture20"
+          component={Gesture20}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture21"
+          component={Gesture21}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture22"
+          component={Gesture22}
           options={{ header: () => null }}
         />
       </Stack.Navigator>

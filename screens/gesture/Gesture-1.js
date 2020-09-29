@@ -32,11 +32,11 @@ const Gesture1 = ({ navigation }) => {
       </View>
       <Button
         title="Go to next bc button is broken"
-        onPress={() => navigation.navigate("Wifi1")}
+        onPress={() => navigation.navigate("Gesture2")}
       />
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("Gesture2")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

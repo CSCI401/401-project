@@ -7,8 +7,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Button
-          title="Go to scroll"
-          onPress={() => this.props.navigation.navigate("Scroll")}
+          title="Next"
+          onPress={() => this.props.navigation.navigate("Gesture17")}
         />
         <Text style={styles.textWrapper}>Practice Zoom out here </Text>
         <View style={styles.zoomWrapper}>
