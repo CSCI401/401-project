@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+// import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -15,20 +16,24 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import TTS from "../../components/TextToSpeech";
 
 const WelcomeSpeech2 = ({ navigation }) => {
+  var textToSpeak1 = "At any point click\n";
+  var textToSpeak2 = "to have the text read out loud";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>At any point, click{"\n"}</Text>
+        <Text style={styles.text}>{textToSpeak1}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
       </View>
+      {/* <Speaker text={textToSpeak1 + textToSpeak2}></Speaker> */}
       <View style={styles.container2}>
-        <Text style={styles.text}>to have the text read out loud</Text>
+        <Text style={styles.text}>{textToSpeak2}</Text>
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity

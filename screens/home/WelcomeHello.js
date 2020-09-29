@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -15,28 +16,21 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import * as Speech from "expo-speech";
+import TTS from "../../components/TextToSpeech";
 
 const WelcomeHello = ({ navigation }) => {
-  var textToSpeak = "Hello, I am Daisy. What's your name?";
+  var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Hello,{"\n"}I am Daisy.{"\n"}
-          {"\n"}What's your name?
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
       </View>
-      <View style={styles.speakerContainer}>
-        <TouchableOpacity onPress={() => Speech.speak(textToSpeak)}>
-          <Image source={require("../../assets/speaker.png")} />
-        </TouchableOpacity>
-      </View>
+      <Speaker text={textToSpeak}></Speaker>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput} placeholder="Insert Name Here" />
       </View>
@@ -79,11 +73,6 @@ const styles = StyleSheet.create({
     top: "112%",
     width: 121,
     height: 98,
-  },
-  speakerContainer: {
-    top: "58%",
-    alignSelf: "center",
-    position: "absolute",
   },
   textInputContainer: {
     top: "60%",

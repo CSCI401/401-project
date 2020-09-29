@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+// import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -17,19 +18,19 @@ import {
 } from "react-native";
 
 const WelcomeThankYou = ({ navigation }) => {
+  var textToSpeak =
+    "Thanks for watching the video\n\nNow we will go to the home screen.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Thanks for watching the video.{"\n"}
-          {"\n"}Now we will go to the home screen.
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
         />
       </View>
+      {/* <Speaker text={textToSpeak}></Speaker> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeTutorials")}

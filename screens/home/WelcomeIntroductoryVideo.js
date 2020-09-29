@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+// import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -17,11 +18,12 @@ import {
 } from "react-native";
 
 const WelcomeIntroductoryVideo = ({ navigation }) => {
+  var textToSpeak = "Let's explain this app\n";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>Let's explain this app.{"\n"}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/speaker.png")}
@@ -31,6 +33,7 @@ const WelcomeIntroductoryVideo = ({ navigation }) => {
           source={require("../../assets/IntroductoryVideoScreenshot.png")}
         />
       </View>
+      {/* <Speaker text={textToSpeak}></Speaker> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeThankYou")}
