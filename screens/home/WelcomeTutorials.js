@@ -41,10 +41,10 @@ const WelcomeTutorials = ({ navigation }) => {
       </View>
       <View style={styles.emailsButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("Gesture1")}
           style={styles.emailsButtonContainer}
         >
-          <Text style={styles.emailsButtonText}>Emails</Text>
+          <Text style={styles.emailsButtonText}>Learn Gestures</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.gesturesButtonView}>
@@ -52,7 +52,7 @@ const WelcomeTutorials = ({ navigation }) => {
           onPress={() => navigation.navigate("Wifi1")}
           style={styles.gesturesButtonContainer}
         >
-          <Text style={styles.gesturesButtonText}>Learn Gestures</Text>
+          <Text style={styles.gesturesButtonText}>Emails</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>

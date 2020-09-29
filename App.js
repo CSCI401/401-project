@@ -10,9 +10,24 @@ import Wifi3 from "./screens/wifi/wifi-3.js";
 import Wifi4 from "./screens/wifi/wifi-4.js";
 import Wifi5 from "./screens/wifi/wifi-5.js";
 import Wifi6 from "./screens/wifi/wifi-6.js";
+import Wifi7 from "./screens/wifi/wifi-7.js";
+import Wifi8 from "./screens/wifi/wifi-8.js";
+import Wifi9 from "./screens/wifi/wifi-9.js";
+import Wifi10 from "./screens/wifi/wifi-10.js";
+import Wifi11 from "./screens/wifi/wifi-11.js";
+import Wifi12 from "./screens/wifi/wifi-12.js";
+import Wifi13 from "./screens/wifi/wifi-13.js";
+import Email1 from "./screens/email/Email-1.js";
+import Email2 from "./screens/email/Email-2";
+import Email3 from "./screens/email/Email-3";
+import Email4 from "./screens/email/Email-4";
+import Email5 from "./screens/email/Email-5";
+import Email6 from "./screens/email/Email-6";
 import ZoomInPractice from "./screens/gesture/ZoomInPractice.js";
 import ZoomOutPractice from "./screens/gesture/ZoomOutPractice.js";
 import ScrollPractice from "./screens/gesture/ScrollPractice.js";
+import Gesture1 from "./screens/gesture/Gesture-1";
+import Gesture2 from "./screens/gesture/Gesture-2";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -164,6 +179,16 @@ export default function App() {
         <Stack.Screen
           name="Scroll"
           component={ScrollPractice}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture1"
+          component={Gesture1}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Gesture2"
+          component={Gesture2}
           options={{ header: () => null }}
         />
       </Stack.Navigator>
