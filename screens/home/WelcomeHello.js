@@ -19,27 +19,25 @@ import {
 import TTS from "../../components/TextToSpeech";
 
 const WelcomeHello = ({ navigation }) => {
-  var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
+  var textToSpeak = "Hello,\nI am Daisy.\n\nWhat's your name?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
       </View>
-      <Speaker text={textToSpeak}></Speaker>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
+      </View>
       <View style={styles.textInputContainer}>
         <TextInput style={styles.textInput} placeholder="Insert Name Here" />
       </View>
-      <View style={styles.appButtonView}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeSpeech")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -56,52 +54,46 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
-  image: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "112%",
-    width: 121,
-    height: 98,
+  speaker: {
+    position: "relative",
+    bottom: "15%",
+    //width: 100,
   },
   textInputContainer: {
-    top: "60%",
+    bottom: "4%",
     position: "relative",
-    height: "7%",
+    height: "10%",
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   textInput: {
-    top: "65%",
-    height: "100%",
     width: "80%",
     borderColor: "black",
     borderWidth: 3,
-    fontSize: 80,
+    fontSize: 60,
     textAlign: "center",
   },
-  appButtonView: {
+  buttonView: {
     width: "100%",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+  YesButtonContainer: {
+    width: "25%",
+    marginBottom: "15%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -109,7 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
 });

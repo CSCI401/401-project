@@ -28,7 +28,9 @@ const Gesture2 = ({ navigation }) => {
         <Text style={styles.text}>
           First, we will go through the buttons on your tablet.
         </Text>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        </View>
       </View>
       <Button
         title="Go to next gesture"
@@ -100,9 +102,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+    width: "25%",
+    marginTop: "100%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -112,5 +113,8 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "15%",
   },
 });

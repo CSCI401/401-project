@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-// import Speaker from "../../components/Speaker";
+import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -24,22 +24,22 @@ const WelcomeIntroductoryVideo = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
+      </View>
+      <View style={styles.speaker}>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+      </View>
+      <View style={styles.image1}>
         <Image
           style={styles.image2}
           source={require("../../assets/IntroductoryVideoScreenshot.png")}
         />
       </View>
-      {/* <Speaker text={textToSpeak}></Speaker> */}
-      <View style={styles.appButtonView}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeThankYou")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -56,52 +56,46 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  container2: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "50%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    // justifyContent: "center",
+    // alignItems: "center",
+    fontSize: 60,
   },
-  image: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "70%",
-    width: 121,
-    height: 98,
+  speaker: {
+    position: "relative",
+    bottom: "15%",
   },
-  image2: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "130%",
-    width: 670,
-    height: 370,
-  },
-  appButtonView: {
+  image1: {
     width: "100%",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonContainer: {
-    top: "1150%",
+  image2: {
+    justifyContent: "center",
+    alignItems: "center",
     position: "relative",
-    width: "45%",
+    bottom: "20%",
+    width: 500,
+    height: 300,
+  },
+  buttonView: {
+    width: "100%",
+    position: "relative",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonContainer: {
+    width: "25%",
+    marginBottom: "20%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -109,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
 });

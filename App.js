@@ -60,8 +60,8 @@ import WelcomeTutorials from "./screens/home/WelcomeTutorials.js";
 const Stack = createStackNavigator();
 
 export default function App() {
-  // return <WelcomeHello />;
-  //return <WelcomeSpeech />;
+  //return <WelcomeHello />;
+  //return <WelcomeSpeech2 />;
 
   return (
     <NavigationContainer>

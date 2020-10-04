@@ -2,7 +2,8 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-// import Speaker from "../../components/Speaker";
+import Speaker from "../../components/Speaker";
+import TTS from "../../components/TextToSpeech";
 
 import {
   StyleSheet,
@@ -16,7 +17,6 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import TTS from "../../components/TextToSpeech";
 
 const WelcomeSpeech2 = ({ navigation }) => {
   var textToSpeak1 = "At any point click\n";
@@ -26,21 +26,19 @@ const WelcomeSpeech2 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak1}</Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
       </View>
-      {/* <Speaker text={textToSpeak1 + textToSpeak2}></Speaker> */}
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak1 + textToSpeak2}></Speaker>
+      </View>
       <View style={styles.container2}>
-        <Text style={styles.text}>{textToSpeak2}</Text>
+        <Text style={styles.text2}>{textToSpeak2}</Text>
       </View>
-      <View style={styles.appButtonView}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeIntroductoryVideo")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -75,26 +73,28 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
-  image: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "90%",
-    width: 121,
-    height: 98,
+  text2: {
+    //marginTop: "%",
+    textAlign: "center",
+    fontSize: 60,
   },
-  appButtonView: {
+  speaker: {
+    position: "relative",
+    marginTop: "40%",
+    //width: 100,
+  },
+  buttonView: {
     width: "100%",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+  YesButtonContainer: {
+    width: "25%",
+    marginTop: "55%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
 });
