@@ -26,6 +26,8 @@ const Wifi1 = ({ navigation }) => {
         <Text style={styles.text}>
           Hello, Glory. {"\n"}Welcome to the wifi tutorial!
         </Text>
+      </View>
+      <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi2")}
           style={styles.appButtonContainer}

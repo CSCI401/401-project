@@ -24,7 +24,7 @@ const Wifi2 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          First Bob, you need to swipe down from the top.
+          First Glory,{"\n"} you need to swipe down {"\n"}from the top.
         </Text>
         <Image
           style={styles.image}
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "absolute",
-    top: "20%",
+    top: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -63,13 +63,15 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     fontSize: 60,
+    alignItems: "center",
+    position: "absolute",
   },
   image: {
     alignItems: "center",
     position: "absolute",
-    top: "112%",
-    width: 121,
-    height: 200,
+    top: "202%",
+    width: 484,
+    height: 800,
   },
   textInputContainer: {
     top: "60%",

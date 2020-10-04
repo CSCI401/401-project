@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-// import Speaker from "../../components/Speaker";
+import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -24,12 +24,10 @@ const WelcomeSpeech = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
       </View>
-      {/* <Speaker text={textToSpeak}></Speaker> */}
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
+      </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeSpeech2")}
@@ -58,27 +56,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
-  image: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "170%",
-    width: 121,
-    height: 98,
+  speaker: {
+    position: "relative",
+    bottom: "5%",
   },
   buttonView: {
     width: "100%",
     flex: 1,
+    position: "relative",
     flexDirection: "row",
     textAlign: "center",
     justifyContent: "center",
@@ -86,7 +80,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    top: "25%",
+    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -100,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    top: "25%",
+    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,

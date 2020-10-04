@@ -28,12 +28,14 @@ const Gesture1 = ({ navigation }) => {
         <Text style={styles.text}>
           Hello, Glory. {"\n"}Welcome to the gesture tutorial!
         </Text>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        </View>
       </View>
-      <Button
+      {/* <Button
         title="Go to next bc button is broken"
         onPress={() => navigation.navigate("Gesture2")}
-      />
+      /> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture2")}
@@ -100,9 +102,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+    width: "25%",
+    marginTop: "100%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -112,5 +113,8 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "40%",
   },
 });

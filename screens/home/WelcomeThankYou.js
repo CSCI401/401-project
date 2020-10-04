@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-// import Speaker from "../../components/Speaker";
+import Speaker from "../../components/Speaker";
 
 import {
   StyleSheet,
@@ -25,18 +25,17 @@ const WelcomeThankYou = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <Image
-          style={styles.image}
-          source={require("../../assets/speaker.png")}
-        />
+        <View style={styles.speaker}>
+          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+        </View>
       </View>
       {/* <Speaker text={textToSpeak}></Speaker> */}
-      <View style={styles.appButtonView}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("WelcomeTutorials")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 60,
   },
   image: {
     justifyContent: "center",
@@ -100,6 +99,32 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  buttonView: {
+    width: "100%",
+    position: "relative",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonContainer: {
+    width: "25%",
+    marginTop: "109%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonText: {
+    fontSize: 60,
+  },
+  speaker: {
+    position: "relative",
+    bottom: "1%",
+    right: "80%",
+    //width: 100,
   },
 });
 
