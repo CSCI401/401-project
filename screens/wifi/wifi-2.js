@@ -30,14 +30,16 @@ const Wifi2 = ({ navigation }) => {
           style={styles.image}
           source={require("../../assets/wifi2.png")}
         />
-
+      </View>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi3")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
+
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -54,61 +56,64 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "15%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-  text: {
-    textAlign: "center",
-    fontSize: 60,
-    alignItems: "center",
-    position: "absolute",
-  },
+
   image: {
     alignItems: "center",
     position: "absolute",
-    top: "202%",
-    width: 484,
-    height: 800,
+    top: "70%",
+    width: 200,
+    height: 300,
   },
-  textInputContainer: {
-    top: "60%",
+
+  text: {
+    textAlign: "center",
+    fontSize: 40,
+  },
+  speaker: {
     position: "relative",
-    height: "7%",
+    bottom: "5%",
+  },
+  buttonView: {
     width: "100%",
+    flex: 1,
+    position: "relative",
+    flexDirection: "row",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: "2%",
   },
-  textInput: {
-    top: "65%",
-    height: "100%",
-    width: "80%",
-    borderColor: "black",
-    borderWidth: 3,
-    fontSize: 80,
-    textAlign: "center",
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+  YesButtonContainer: {
+    //top: "25%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    margin: "2%",
   },
-  appButtonText: {
+  YesButtonText: {
+    fontSize: 60,
+  },
+  NoButtonContainer: {
+    //top: "25%",
+    width: "25%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2%",
+  },
+  NoButtonText: {
     fontSize: 60,
   },
 });

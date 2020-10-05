@@ -21,7 +21,7 @@ import TTS from "../../components/TextToSpeech";
 
 const WelcomeHello = ({ navigation }) => {
   var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
-  
+
   useEffect(() => {
     console.log("inside the useEffect");
     firestore
@@ -40,7 +40,8 @@ const WelcomeHello = ({ navigation }) => {
   //the above will only render the everytine
 
   const next = () => {
-    db.collection("users")
+    firestore
+      .collection("users")
       .doc()
       .set({
         name: "Los Angeles",
@@ -54,9 +55,9 @@ const WelcomeHello = ({ navigation }) => {
       .catch(function (error) {
         console.error("Error writing document: ", error);
       });
-      navigation.navigate("WelcomeSpeech");
+    navigation.navigate("WelcomeSpeech");
   };
-  
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
