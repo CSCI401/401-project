@@ -18,6 +18,10 @@
       "package": "com.usc.project401",
       "googleServicesFile": "./google-services.json"
     },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.schoolbucks.app"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
