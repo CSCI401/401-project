@@ -18,30 +18,24 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,\nwe will go through the buttons on your tablet";
+var textToSpeak = "First,we will go through the buttons on your tablet";
 
 const Gesture2 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          First, we will go through the buttons on your tablet.
-        </Text>
-        <View style={styles.speaker}>
-          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-        </View>
+        <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture3")}
-      />
-      <View style={styles.appButtonView}>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
+      </View>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture3")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -54,67 +48,43 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     position: "relative",
-    width: "100%",
   },
   container: {
+    flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    fontSize: 80,
-  },
-  appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    width: "25%",
-    marginTop: "100%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
     fontSize: 60,
   },
   speaker: {
-    top: "15%",
+    position: "relative",
+    bottom: "20%",
+    //width: 100,
+  },
+  buttonView: {
+    width: "100%",
+    position: "relative",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonContainer: {
+    width: "25%",
+    marginBottom: "25%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonText: {
+    fontSize: 60,
   },
 });
