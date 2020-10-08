@@ -63,8 +63,6 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    // justifyContent: "center",
-    // alignItems: "center",
     fontSize: 60,
   },
   speaker: {

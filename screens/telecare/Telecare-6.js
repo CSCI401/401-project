@@ -1,10 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
+import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+
 import {
   StyleSheet,
   Text,
@@ -18,21 +17,22 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,we will go through the buttons on your tablet";
-
-const Gesture2 = ({ navigation }) => {
+const Telecare6 = ({ navigation }) => {
+  var textToSpeak =
+    "Now you have learned how to access your emails.\n\nLet's check in to your appointments.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
+        <View style={styles.speaker}>
+          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+        </View>
       </View>
-      <View style={styles.speaker}>
-        <Speaker text={textToSpeak}></Speaker>
-      </View>
+      {/* <Speaker text={textToSpeak}></Speaker> */}
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture3")}
+          onPress={() => navigation.navigate("Telecare7")}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -43,7 +43,6 @@ const Gesture2 = ({ navigation }) => {
   );
 };
 
-export default Gesture2;
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -53,7 +52,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "15%",
+    position: "absolute",
+    top: "20%",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+  container2: {
+    flexDirection: "row",
+    width: "100%",
+    flex: 1,
+    position: "absolute",
+    top: "50%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -62,10 +72,33 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 60,
   },
-  speaker: {
+  image: {
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: "110%",
+    width: 121,
+    height: 98,
+  },
+  appButtonView: {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonContainer: {
+    top: "1150%",
     position: "relative",
-    bottom: "20%",
-    //width: 100,
+    width: "45%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appButtonText: {
+    fontSize: 60,
   },
   buttonView: {
     width: "100%",
@@ -76,7 +109,7 @@ const styles = StyleSheet.create({
   },
   YesButtonContainer: {
     width: "25%",
-    marginBottom: "25%",
+    marginTop: "109%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -87,4 +120,12 @@ const styles = StyleSheet.create({
   YesButtonText: {
     fontSize: 60,
   },
+  speaker: {
+    position: "relative",
+    bottom: "1%",
+    right: "80%",
+    //width: 100,
+  },
 });
+
+export default Telecare6;

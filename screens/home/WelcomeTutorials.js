@@ -25,7 +25,7 @@ const WelcomeTutorials = ({ navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("Telecare1")}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Telecare</Text>
