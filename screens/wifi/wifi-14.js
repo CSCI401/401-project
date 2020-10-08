@@ -3,9 +3,7 @@ import React from "react";
 import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Wifi11 from "./wifi-11.js";
 import WelcomeTutorials from "../home/WelcomeTutorials.js";
-
 import {
   StyleSheet,
   Text,
@@ -19,9 +17,9 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Wifi10 = ({ navigation }) => {
+const Wifi14 = ({ navigation }) => {
   const textToSpeech =
-    "You might want to call a family member or your internet provider to find out more about the Wifi name and password.";
+    "You might have select the wrong wifi or enterd a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -41,7 +39,7 @@ const Wifi10 = ({ navigation }) => {
   );
 };
 
-export default Wifi10;
+export default Wifi14;
 // <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
@@ -51,24 +49,23 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     top: "5%",
-    width: "70%",
+    width: "90%",
+    left: "4%",
     flex: 1,
     bottom: "10%",
-    left: "10%",
-
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-  image: {
+
+  image1: {
     alignItems: "center",
     position: "absolute",
     top: "80%",
-    margin: "10%",
-    width: 500,
+    left: "10%",
+    width: 400,
     height: 300,
   },
-
   text: {
     textAlign: "center",
     fontSize: 40,
