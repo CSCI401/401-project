@@ -17,6 +17,7 @@ import Wifi10 from "./screens/wifi/wifi-10.js";
 import Wifi11 from "./screens/wifi/wifi-11.js";
 import Wifi12 from "./screens/wifi/wifi-12.js";
 import Wifi13 from "./screens/wifi/wifi-13.js";
+import Wifi14 from "./screens/wifi/wifi-14.js";
 import Email1 from "./screens/email/Email-1.js";
 import Email2 from "./screens/email/Email-2";
 import Email3 from "./screens/email/Email-3";
@@ -165,6 +166,11 @@ export default function App() {
         <Stack.Screen
           name="Wifi13"
           component={Wifi13}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Wifi14"
+          component={Wifi14}
           options={{ header: () => null }}
         />
         <Stack.Screen

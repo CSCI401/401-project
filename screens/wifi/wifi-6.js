@@ -28,10 +28,16 @@ const Wifi6 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi7")}
+          onPress={() => navigation.navigate("Wifi11")}
           style={styles.YesButtonContainer}
         >
-          <Text style={styles.YesButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Yes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Wifi7")}
+          style={styles.NoButtonContainer}
+        >
+          <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>

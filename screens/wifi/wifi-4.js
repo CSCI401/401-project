@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   image1: {
     alignItems: "center",
     position: "absolute",
-    top: "55%",
+    top: "60%",
     width: 200,
     height: 300,
   },

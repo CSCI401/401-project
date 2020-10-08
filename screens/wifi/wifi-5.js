@@ -25,6 +25,10 @@ const Wifi5 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeech}</Text>
+        <Image
+          style={styles.image1}
+          source={require("../../assets/wifi_setting.png")}
+        />
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    width: "100%",
+    width: "90%",
     flex: 1,
     bottom: "10%",
     justifyContent: "center",
@@ -59,7 +63,8 @@ const styles = StyleSheet.create({
   image1: {
     alignItems: "center",
     position: "absolute",
-    top: "55%",
+    top: "70%",
+    left: "40%",
     width: 200,
     height: 300,
   },
