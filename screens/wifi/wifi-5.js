@@ -25,11 +25,17 @@ const Wifi5 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeech}</Text>
+        <Image
+          style={styles.image1}
+          source={require("../../assets/wifi_setting.png")}
+        />
+      </View>
+      <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi6")}
-          style={styles.appButtonContainer}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -46,82 +52,74 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    width: "100%",
+    width: "90%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
+
+  image1: {
+    alignItems: "center",
+    position: "absolute",
+    top: "70%",
+    left: "40%",
+    width: 200,
+    height: 300,
+  },
+  image2: {
+    position: "absolute",
+    left: 400,
+    top: 250,
+    width: 70,
+    height: 70,
+  },
+
   text: {
     textAlign: "center",
-    fontSize: 80,
+    fontSize: 40,
   },
-  image: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "112%",
-    width: 121,
-    height: 98,
-  },
-  textInputContainer: {
-    top: "60%",
+  speaker: {
     position: "relative",
-    height: "7%",
+    bottom: "5%",
+  },
+  buttonView: {
     width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textInput: {
-    top: "65%",
-    height: "100%",
-    width: "80%",
-    borderColor: "black",
-    borderWidth: 3,
-    fontSize: 80,
-    textAlign: "center",
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
+    flex: 1,
     position: "relative",
-    width: "45%",
+    flexDirection: "row",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "2%",
+  },
+  YesButtonContainer: {
+    //top: "25%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    margin: "2%",
   },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
+  NoButtonContainer: {
+    //top: "25%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    margin: "2%",
   },
-  appButtonText: {
+  NoButtonText: {
     fontSize: 60,
   },
 });

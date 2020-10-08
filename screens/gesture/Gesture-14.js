@@ -18,7 +18,8 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Touch the screen and unpinch your fingers to zoom out\n";
+var textToSpeak =
+  "Touch the screen and pinch your fingers to zoom out\n Watch the demonstration below. \n";
 
 const Gesture14 = ({ navigation }) => {
   return (
@@ -26,10 +27,18 @@ const Gesture14 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          Touch the screen and unpinch your fingers to zoom out
+          Touch the screen and pinch your fingers to zoom out. Watch the
+          demonstration below
         </Text>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
+      <Image
+        style={{ width: 300, height: 200 }}
+        source={{
+          uri:
+            "https://cdn.gadgetguideonline.com/s10/wp-content/uploads/sites/10/2019/03/galaxy_s10_touchscreen_gestures_6_pinch.gif",
+        }}
+      />
       <Button
         title="Go to next gesture"
         onPress={() => navigation.navigate("Gesture15")}
