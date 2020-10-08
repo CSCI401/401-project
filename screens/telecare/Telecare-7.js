@@ -26,7 +26,7 @@ const Telecare7 = ({ navigation }) => {
       <View style={styles.image1}>
         <Image
           style={styles.image2}
-          source={require("../../assets/IntroductoryVideoScreenshot.png")}
+          source={require("../../assets/keckcheckin.png")}
         />
       </View>
 
