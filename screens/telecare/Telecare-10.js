@@ -17,8 +17,9 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Telecare7 = ({ navigation }) => {
-  var textToSpeak = "Click on the check-in button\nto join the waiting room\n";
+const Telecare10 = ({ navigation }) => {
+  var textToSpeak =
+    "To sign the consent form,\nuse your finger to draw your\nsingature on the dotted line.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -40,7 +41,7 @@ const Telecare7 = ({ navigation }) => {
 
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare8")}
+          onPress={() => navigation.navigate("Telecare11")}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "10%",
+    bottom: "8%",
   },
   image1: {
     marginTop: "20%",
@@ -111,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Telecare7;
+export default Telecare10;

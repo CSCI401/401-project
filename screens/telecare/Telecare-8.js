@@ -17,30 +17,21 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Telecare7 = ({ navigation }) => {
-  var textToSpeak = "Click on the check-in button\nto join the waiting room\n";
+const Telecare8 = ({ navigation }) => {
+  var textToSpeak =
+    'Next, you will see a telemedicine consent form.\n\nIf you are willing to have a\ntelephone appointment, scroll to read the form and click "Sign".';
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
-
-      <View style={styles.image1}>
-        <Image
-          style={styles.image2}
-          source={require("../../assets/IntroductoryVideoScreenshot.png")}
-        />
-      </View>
-
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
+        <View style={styles.speaker}>
+          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+        </View>
       </View>
-
-      <View style={styles.speaker}>
-        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-      </View>
-
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare8")}
+          onPress={() => navigation.navigate("Telecare9")}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -60,34 +51,54 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    position: "absolute",
+    top: "20%",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+  container2: {
+    flexDirection: "row",
+    width: "100%",
+    flex: 1,
+    position: "absolute",
+    top: "50%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 48,
+    marginHorizontal: "2%",
   },
-  speaker: {
-    position: "relative",
-    bottom: "10%",
+  image: {
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: "110%",
+    width: 121,
+    height: 98,
   },
-  image1: {
-    marginTop: "20%",
+  appButtonView: {
     width: "100%",
-    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  image2: {
+  appButtonContainer: {
+    top: "1150%",
+    position: "relative",
+    width: "45%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
-    position: "relative",
-    bottom: "20%",
-    width: 500,
-    height: 300,
+  },
+  appButtonText: {
+    fontSize: 60,
   },
   buttonView: {
     width: "100%",
@@ -98,7 +109,7 @@ const styles = StyleSheet.create({
   },
   YesButtonContainer: {
     width: "25%",
-    marginBottom: "15%",
+    marginTop: "109%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -109,6 +120,11 @@ const styles = StyleSheet.create({
   YesButtonText: {
     fontSize: 60,
   },
+  speaker: {
+    position: "relative",
+    bottom: "1%",
+    right: "65%",
+  },
 });
 
-export default Telecare7;
+export default Telecare8;
