@@ -34,10 +34,6 @@ const Gesture9 = ({ navigation }) => {
         resizeMode="stretch"
       />
 
-      <Button
-        title="Next gesture page"
-        onPress={() => navigation.navigate("Gesture10")}
-      />
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture10")}
