@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    bottom: "20%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -106,11 +106,19 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
+<<<<<<< HEAD
     bottom: "24%",
     //width: 100,
   },
   textInputContainer: {
     bottom: "15%",
+=======
+    bottom: "20%",
+    //width: 100,
+  },
+  textInputContainer: {
+    bottom: "10%",
+>>>>>>> 4bc914c7152ff44a8131075fed6c878c888ce381
     position: "relative",
     height: "10%",
     width: "100%",
@@ -135,7 +143,7 @@ const styles = StyleSheet.create({
   },
   YesButtonContainer: {
     width: "25%",
-    marginBottom: "15%",
+    marginBottom: "80%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

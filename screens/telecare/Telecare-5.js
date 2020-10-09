@@ -1,10 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
+import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+
 import {
   StyleSheet,
   Text,
@@ -18,9 +17,8 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,we will go through the buttons on your tablet";
-
-const Gesture2 = ({ navigation }) => {
+const Telecare5 = ({ navigation }) => {
+  var textToSpeak = "Do you know how to access your email?\n";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -32,10 +30,16 @@ const Gesture2 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture3")}
+          onPress={() => navigation.navigate("Telecare6")}
           style={styles.YesButtonContainer}
         >
-          <Text style={styles.YesButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Yes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Email1")}
+          style={styles.NoButtonContainer}
+        >
+          <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -43,7 +47,6 @@ const Gesture2 = ({ navigation }) => {
   );
 };
 
-export default Gesture2;
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "15%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -64,27 +67,46 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "20%",
-    //width: 100,
+    bottom: "5%",
   },
   buttonView: {
     width: "100%",
+    flex: 1,
     position: "relative",
+    flexDirection: "row",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: "2%",
   },
   YesButtonContainer: {
+    //top: "25%",
     width: "25%",
-    marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    margin: "2%",
   },
   YesButtonText: {
     fontSize: 60,
   },
+  NoButtonContainer: {
+    //top: "25%",
+    width: "25%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "2%",
+  },
+  NoButtonText: {
+    fontSize: 60,
+  },
 });
+
+export default Telecare5;

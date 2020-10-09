@@ -49,6 +49,18 @@ import Gesture19 from "./screens/gesture/Gesture-19";
 import Gesture20 from "./screens/gesture/Gesture-20";
 import Gesture21 from "./screens/gesture/Gesture-21";
 import Gesture22 from "./screens/gesture/Gesture-22";
+import Telecare1 from "./screens/telecare/Telecare-1";
+import Telecare2 from "./screens/telecare/Telecare-2";
+import Telecare3 from "./screens/telecare/Telecare-3";
+import Telecare4 from "./screens/telecare/Telecare-4";
+import Telecare5 from "./screens/telecare/Telecare-5";
+import Telecare6 from "./screens/telecare/Telecare-6";
+import Telecare7 from "./screens/telecare/Telecare-7";
+import Telecare8 from "./screens/telecare/Telecare-8";
+import Telecare9 from "./screens/telecare/Telecare-9";
+import Telecare10 from "./screens/telecare/Telecare-10";
+import Telecare11 from "./screens/telecare/Telecare-11";
+import Telecare12 from "./screens/telecare/Telecare-12";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -315,6 +327,66 @@ export default function App() {
         <Stack.Screen
           name="Gesture22"
           component={Gesture22}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare1"
+          component={Telecare1}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare2"
+          component={Telecare2}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare3"
+          component={Telecare3}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare4"
+          component={Telecare4}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare5"
+          component={Telecare5}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare6"
+          component={Telecare6}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare7"
+          component={Telecare7}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare8"
+          component={Telecare8}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare9"
+          component={Telecare9}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare10"
+          component={Telecare10}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare11"
+          component={Telecare11}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Telecare12"
+          component={Telecare12}
           options={{ header: () => null }}
         />
       </Stack.Navigator>
