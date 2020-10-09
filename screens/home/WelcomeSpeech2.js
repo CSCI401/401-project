@@ -20,7 +20,7 @@ import {
 
 const WelcomeSpeech2 = ({ navigation }) => {
   var textToSpeak1 = "At any point click\nthe speaker icon\n";
-  var textToSpeak2 = "to have the text read out loud";
+  var textToSpeak2 = "to have the text read out loud.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

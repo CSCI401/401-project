@@ -18,7 +18,7 @@ import {
 } from "react-native";
 
 const WelcomeIntroductoryVideo = ({ navigation }) => {
-  var textToSpeak = "Let's explain this app\n";
+  var textToSpeak = "Let's explain this app.\n";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
