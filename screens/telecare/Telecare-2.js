@@ -19,7 +19,7 @@ import {
 
 const Telecare2 = ({ navigation }) => {
   var textToSpeak =
-    "You will get an email. An example is on the next screen\n\nYou will press a button to enter the waiting room.";
+    "You will get an email. An example is on the next screen.\n\nYou will press a button to enter the waiting room.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

@@ -18,7 +18,7 @@ import {
 } from "react-native";
 
 const Wifi13 = ({ navigation }) => {
-  const textToSpeech = "Congratulation! You are done with setting up the WiFi!";
+  const textToSpeech = "Congratulations! You are done setting up the WiFi!";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -34,7 +34,7 @@ const Wifi13 = ({ navigation }) => {
           onPress={() => navigation.navigate("WelcomeTutorials")}
           style={styles.YesButtonContainer}
         >
-          <Text style={styles.YesButtonText}>Go back to home page</Text>
+          <Text style={styles.YesButtonText}>Home</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>

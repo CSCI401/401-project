@@ -18,7 +18,7 @@ import {
 } from "react-native";
 
 const Telecare3 = ({ navigation }) => {
-  var textToSpeak = "Here's an example email. Click on ENTER WAITING ROOM\n";
+  var textToSpeak = "Here's an example email. Click on ENTER WAITING ROOM.\n";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     bottom: "0%",
     width: 500,
     height: 400,
+    resizeMode: "contain"
   },
   buttonView: {
     width: "100%",

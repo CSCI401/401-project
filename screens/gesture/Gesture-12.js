@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "You can also search for an app with the name\n";
+var textToSpeak = "You can also search for an app with the name.\n";
 
 const Gesture12 = ({ navigation }) => {
   return (

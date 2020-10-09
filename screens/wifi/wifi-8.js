@@ -20,7 +20,7 @@ import {
 import Speaker from "../../components/Speaker";
 
 const Wifi8 = ({ navigation }) => {
-  var textToSpeak = "Your router might look similar to these. Can you find it?";
+  var textToSpeak = "Your router might look similar to these. Can you find your router?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

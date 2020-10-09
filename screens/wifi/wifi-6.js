@@ -20,7 +20,7 @@ import Speaker from "../../components/Speaker";
 
 const Wifi6 = ({ navigation }) => {
   var textToSpeak =
-    "Next, you need to select your wifi, \nand enter the passwords.\n \nDo you know what are they?";
+    "Next, you need to select your wifi \nand enter the passwords.\n \nDo you know what they are?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

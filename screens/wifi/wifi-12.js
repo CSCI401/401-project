@@ -20,7 +20,7 @@ import {
 
 const Wifi12 = ({ navigation }) => {
   const textToSpeech =
-    "To check if you have connect successfully, you can swipe down again, and check if you can see this";
+    "To see if you have connected successfully, swipe down again and check if you can see this.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

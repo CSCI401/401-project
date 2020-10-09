@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Use the home button to return to the screen of apps\n \n You can find our app there if you exit out";
+  "Use the home button to return to the screen of apps.\n \n You can find our app there if you exit out.";
 
 const Gesture7 = ({ navigation }) => {
   return (

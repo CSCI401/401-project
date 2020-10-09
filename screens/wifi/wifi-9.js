@@ -19,7 +19,7 @@ import {
 
 const Wifi9 = ({ navigation }) => {
   const textToSpeech =
-    "There is usually a sticker on the router that tell you the WiFi name and password. Can you find it?";
+    "There is usually a sticker on the router that tells you the WiFi name and password. Can you find the sticker?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

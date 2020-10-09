@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "The back button will take you back\n to the most recent page in the app";
+  "The back button will take you back\n to the most recent page in the app.";
 
 const Gesture5 = ({ navigation }) => {
   return (

@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Click on an app icon to open the app\n";
+var textToSpeak = "Click on an app icon to open the app.\n";
 
 const Gesture11 = ({ navigation }) => {
   return (

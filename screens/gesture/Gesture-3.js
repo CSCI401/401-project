@@ -18,8 +18,8 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak1 = "Here is the power button";
-var textToSpeak2 = "Here are\n the \nvolume buttons";
+var textToSpeak1 = "Here is the power button.";
+var textToSpeak2 = "Here are\n the \nvolume buttons.";
 
 const Gesture3 = ({ navigation }) => {
   return (

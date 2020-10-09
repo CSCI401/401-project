@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "First,we will go through the buttons on your tablet";
+var textToSpeak = "First, we will go through the buttons on your tablet.";
 
 const Gesture2 = ({ navigation }) => {
   return (

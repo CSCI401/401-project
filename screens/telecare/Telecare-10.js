@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
     width: 500,
     height: 300,
+    resizeMode: "contain"
   },
   buttonView: {
     width: "100%",

@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Touch the screen and drag your finger across to slide or scroll\n";
+  "Touch the screen and drag your finger across to slide or scroll.\n";
 
 const Gesture20 = ({ navigation }) => {
   return (

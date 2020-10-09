@@ -19,7 +19,7 @@ import {
 
 const Telecare9 = ({ navigation }) => {
   var textToSpeak =
-    'If you are willing to have the\nappointment, click "Sign"\n';
+    'If you are willing to have the appointment, click "Sign".\n';
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 45,
   },
   speaker: {
     position: "relative",
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
     width: 500,
     height: 300,
+    resizeMode: "contain"
   },
   buttonView: {
     width: "100%",

@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 45,
   },
   speaker: {
     position: "relative",
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
     width: 500,
     height: 300,
+    resizeMode: "contain"
   },
   buttonView: {
     width: "100%",

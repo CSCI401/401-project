@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Tap this button to flip between open apps\n";
+var textToSpeak = "Tap this button to flip between open apps.\n";
 
 const Gesture8 = ({ navigation }) => {
   return (

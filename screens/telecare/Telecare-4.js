@@ -19,7 +19,7 @@ import {
 
 const Telecare4 = ({ navigation }) => {
   var textToSpeak =
-    "Here's an example text. <Placeholder until we get text info>\n";
+    "Here's an example text.\n";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -32,7 +32,7 @@ const Telecare4 = ({ navigation }) => {
       <View style={styles.image1}>
         <Image
           style={styles.image2}
-          source={require("../../assets/keckwaitingroom.png")}
+          source={require("../../assets/kecktextwaiting.png")}
         />
       </View>
       <View style={styles.buttonView}>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     bottom: "0%",
     width: 500,
     height: 400,
+    resizeMode: "contain"
   },
   buttonView: {
     width: "100%",

@@ -21,7 +21,7 @@ import Speaker from "../../components/Speaker";
 
 const Wifi7 = ({ navigation }) => {
   var textToSpeak =
-    "Usually, your WiFi username and password can be found on the router. Click next to see picture exmaple.";
+    "Usually, your WiFi username and password can be found on the router. Click next to see a picture example.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

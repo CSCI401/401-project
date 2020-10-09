@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Touch the screen and unpinch your fingers to zoom in\n Watch the demonstration below \n";
+  "Touch the screen and unpinch your fingers to zoom in.\n Watch the demonstration below. \n";
 
 const Gesture17 = ({ navigation }) => {
   return (

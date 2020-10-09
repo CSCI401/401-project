@@ -19,7 +19,7 @@ import {
 
 const WelcomeThankYou = ({ navigation }) => {
   var textToSpeak =
-    "Thanks for watching the video\n\nNow we will go to the home screen.";
+    "Thanks for watching the video.\n\nNow we will go to the home screen.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>

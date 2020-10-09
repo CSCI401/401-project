@@ -26,7 +26,7 @@ const Telecare8 = ({ navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speaker}>
-          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+          <Speaker text={textToSpeak}></Speaker>
         </View>
       </View>
       <View style={styles.buttonView}>

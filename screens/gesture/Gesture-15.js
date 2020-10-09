@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Zoom out on the next page to see the full flower. \n \n Hit next when done";
+  "Zoom out on the next page to see the full flower. \n \n Hit next when done.";
 
 const Gesture15 = ({ navigation }) => {
   return (

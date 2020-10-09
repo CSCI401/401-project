@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Scroll down on the next page to see the hidden message! \n \n Hit next when done";
+  "Scroll down on the next page to see the hidden message! \n \n Hit next when done.";
 
 const Gesture21 = ({ navigation }) => {
   return (
