@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-
+import Speaker from "../../components/Speaker";
 import { Component } from "react";
 import Wifi6 from "./wifi-6.js";
 import Header from "../../components/Header";
@@ -19,16 +19,19 @@ import {
 } from "react-native";
 
 const Wifi5 = ({ navigation }) => {
-  const textToSpeech = "Next, you can click on Wireless to set up WiFi.";
+  var textToSpeak = "Next, you can click on Wireless to set up WiFi.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image1}
           source={require("../../assets/wifi_setting.png")}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     top: "70%",
-    left: "40%",
+    left: "35%",
     width: 200,
     height: 300,
   },
@@ -121,5 +124,9 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "20%",
+    right: "20%",
   },
 });

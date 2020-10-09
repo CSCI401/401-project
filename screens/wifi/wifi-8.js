@@ -17,18 +17,22 @@ import {
   ImageBackground,
 } from "react-native";
 
+import Speaker from "../../components/Speaker";
+
 const Wifi8 = ({ navigation }) => {
-  const textToSpeech =
-    "Your router might look similar to these. Can you find it?";
+  var textToSpeak = "Your router might look similar to these. Can you find it?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/router.jpg")}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
