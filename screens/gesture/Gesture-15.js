@@ -29,12 +29,10 @@ const Gesture15 = ({ navigation }) => {
         <Text style={styles.text}>
           Zoom out on the next page to see the full flower.Hit next when done
         </Text>
+      </View>
+      <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture16")}
-      />
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture16")}
@@ -56,10 +54,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
+    flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -74,9 +72,8 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
+    width: "25%",
+    marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -84,32 +81,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
+  speaker: {
+    position: "relative",
+    textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
-    textAlign: "center",
+    bottom: "15%",
+    //width: 100,
   },
   appButtonView: {
     width: "100%",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
+  appButtonText: {
+    fontSize: 60,
   },
   appButtonText: {
     fontSize: 60,

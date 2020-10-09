@@ -28,12 +28,14 @@ const Gesture10 = ({ navigation }) => {
         <Text style={styles.text}>
           Now we will talk about finding apps in your tablet
         </Text>
+      </View>
+      <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
+      {/* <Button
         title="Go to next gesture"
         onPress={() => navigation.navigate("Gesture11")}
-      />
+      /> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture11")}
@@ -88,20 +90,22 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "absolute",
-    top: "20%",
+    top: "40%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   appButtonView: {
+    marginTop: "80%",
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
+    // top: "125%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -112,5 +116,11 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    position: "relative",
+    top: "40%",
+    //bottom: "10%",
+    //width: 100,
   },
 });

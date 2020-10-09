@@ -129,9 +129,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  appButtonContainer: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    //top: "20%",
+  },
   YesButtonContainer: {
     width: "25%",
-    marginBottom: "80%",
+    //marginBottom: "70%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

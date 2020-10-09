@@ -26,12 +26,10 @@ const Gesture13 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>Now we will go through screen gestures</Text>
+      </View>
+      <View style={styles.speakerContainer}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture14")}
-      />
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture14")}
@@ -54,9 +52,9 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
+    //flex: 1,
+    position: "relative",
+    top: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -71,8 +69,9 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
+    top: "65%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -81,31 +80,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
+  speakerContainer: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
+    position: "relative",
     alignItems: "center",
     textAlign: "center",
+    marginTop: "30%",
   },
   appButtonView: {
+    marginTop: "15%",
     width: "100%",
     textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
   },
   appButtonText: {

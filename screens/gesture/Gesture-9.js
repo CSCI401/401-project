@@ -26,8 +26,11 @@ const Gesture9 = ({ navigation }) => {
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>Clicking the square will look like this</Text>
+        <View style={styles.speakerContainer}>
+          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        </View>
       </View>
-      <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+
       <Image
         style={styles.image}
         source={require("../../assets/tabscreenshot.png")}
@@ -56,9 +59,9 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "10%",
+    //flex: 1,
+    position: "relative",
+    //top: "0%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -71,10 +74,12 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 80,
+    //padding: "1%",
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
+    top: "65%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -83,32 +88,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
+  speakerContainer: {
     width: "100%",
-    flex: 1,
     position: "relative",
-    top: "20%",
-    justifyContent: "flex-end",
     alignItems: "center",
     textAlign: "center",
-    paddingRight: 200,
   },
   appButtonView: {
     width: "100%",
     textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
   },
   appButtonText: {
@@ -116,18 +105,13 @@ const styles = StyleSheet.create({
   },
   image: {
     // flex: 1,
-    width: "45%",
-    height: "50%",
-    position: "relative",
-    top: 400,
-    left: 150,
-  },
-  image: {
-    // flex: 1,
     width: "50%",
     height: "50%",
     position: "relative",
-    top: 250,
-    left: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    left: "23%",
+    top: "6%",
+    // left: 150,
   },
 });

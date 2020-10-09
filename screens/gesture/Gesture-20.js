@@ -29,12 +29,10 @@ const Gesture20 = ({ navigation }) => {
         <Text style={styles.text}>
           Touch the screen and drag your finger across to slide or scroll
         </Text>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        <View style={styles.speakerContainer}>
+          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+        </View>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture21")}
-      />
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture21")}
@@ -58,13 +56,14 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    position: "relative",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
+    marginTop: "15%",
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
@@ -74,9 +73,8 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
+    width: "25%",
+    marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -84,29 +82,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
+  speakerContainer: {
+    marginTop: "15%",
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
+    position: "relative",
     alignItems: "center",
     textAlign: "center",
   },
   appButtonView: {
     width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",

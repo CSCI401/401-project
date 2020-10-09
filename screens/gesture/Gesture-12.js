@@ -29,15 +29,13 @@ const Gesture12 = ({ navigation }) => {
           You can also search for an app with the name
         </Text>
       </View>
-      <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      </View>
       <Image
         style={styles.image}
         source={require("../../assets/firescreenshot.png")}
         resizeMode="stretch"
-      />
-      <Button
-        title="Next gesture page"
-        onPress={() => navigation.navigate("Gesture13")}
       />
       <View style={styles.appButtonView}>
         <TouchableOpacity
@@ -61,9 +59,9 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "10%",
+    //flex: 1,
+    position: "relative",
+    //top: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -72,14 +70,21 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    fontSize: 60,
+    fontSize: 55,
   },
   appButtonText: {
-    fontSize: 80,
+    fontSize: 60,
+  },
+  appButtonView: {
+    width: "100%",
+    textAlign: "center",
+    // justifyContent: "center",
+    alignItems: "center",
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
+    top: "60%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -87,6 +92,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+  },
+  speakerContainer: {
+    width: "100%",
+    position: "relative",
+    alignItems: "center",
+    textAlign: "center",
   },
   textButton: {
     flexDirection: "row",
@@ -105,26 +116,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
-    fontSize: 60,
-  },
   image: {
     // flex: 1,
-    width: "45%",
+    width: "50%",
     height: "50%",
     position: "relative",
-    top: 400,
-    left: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    left: "25%",
+    top: "6%",
+    // left: 150,
   },
 });

@@ -27,16 +27,18 @@ const Gesture11 = ({ navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>Click on an app icon to open the app</Text>
       </View>
-      <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      </View>
       <Image
         style={styles.image}
         source={require("../../assets/firescreenshot.png")}
         resizeMode="stretch"
       />
-      <Button
+      {/* <Button
         title="Next gesture page"
         onPress={() => navigation.navigate("Gesture12")}
-      />
+      /> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Gesture12")}
@@ -71,41 +73,20 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "flex-end",
     fontSize: 60,
+    marginTop: "5%",
   },
   appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "relative",
-    top: "20%",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    textAlign: "center",
-    paddingRight: 200,
+    fontSize: 50,
   },
   appButtonView: {
     width: "100%",
     textAlign: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
+    top: "90%",
+    //position: "relative",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -114,15 +95,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonText: {
-    fontSize: 60,
-  },
+
   image: {
-    // flex: 1,
-    width: "45%",
-    height: "50%",
+    width: "47%",
+    height: "47%",
     position: "relative",
-    top: 400,
-    left: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    left: "28%",
+    top: "7%",
+  },
+  speakerContainer: {
+    //flexDirection: "row",
+    width: "100%",
+    //paddingLeft: "10%",
+    //flex: 1,
+    position: "relative",
+    marginTop: "27%",
+    //marginLeft: "90%",
+    //top: "30%",
+    //left: "80%",
+    //paddingLeft: "70%",
+    //justifyContent: "flex-end",
+    //paddingLeft: "90%",
+    alignItems: "center",
+    textAlign: "center",
+    //paddingRight: 200,
   },
 });
