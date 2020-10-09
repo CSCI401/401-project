@@ -16,17 +16,23 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import Speaker from "../../components/Speaker";
 
 const Wifi3 = ({ navigation }) => {
+  var textToSpeak = "You should be able to see this page.";
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>You should be able to see this page.</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/wifi3.png")}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -61,7 +67,7 @@ const styles = StyleSheet.create({
   image: {
     alignItems: "center",
     position: "absolute",
-    top: "55%",
+    top: "70%",
     width: 200,
     height: 300,
   },
@@ -85,7 +91,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -111,5 +117,9 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "30%",
+    right: "20%",
   },
 });

@@ -17,20 +17,24 @@ import {
   ImageBackground,
 } from "react-native";
 import Wifi3 from "./wifi-3.js";
+import Speaker from "../../components/Speaker";
 
 const Wifi2 = ({ navigation }) => {
+  var textToSpeak = "First Glory,\n you need to swipe down \nfrom the top.";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          First Glory,{"\n"} you need to swipe down {"\n"}from the top.
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/wifi2.png")}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
+
       <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi3")}
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -115,5 +119,9 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "20%",
+    right: "10%",
   },
 });

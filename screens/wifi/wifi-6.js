@@ -16,16 +16,21 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import Speaker from "../../components/Speaker";
 
 const Wifi6 = ({ navigation }) => {
-  const textToSpeech =
+  var textToSpeak =
     "Next, you need to select your wifi, \nand enter the passwords.\n \nDo you know what are they?";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
+
       <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Wifi11")}
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -113,7 +118,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -125,5 +130,8 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    right: "20%",
   },
 });

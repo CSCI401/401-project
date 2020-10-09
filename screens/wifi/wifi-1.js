@@ -5,6 +5,8 @@ import { Component } from "react";
 import Wifi2 from "./wifi-2.js";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Speaker from "../../components/Speaker";
+
 import {
   StyleSheet,
   Text,
@@ -19,13 +21,15 @@ import {
 } from "react-native";
 
 const Wifi1 = ({ navigation }) => {
+  var textToSpeak = "Hello, Glory. \n Welcome to the wifi tutorial!";
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Hello, Glory. {"\n"}Welcome to the wifi tutorial!
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
+      </View>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -102,5 +106,10 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    position: "relative",
+    bottom: "10%",
+    //width: 100,
   },
 });
