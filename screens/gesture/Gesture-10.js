@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -18,25 +18,28 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Now we will talk about finding apps in your tablet\n";
+var textToSpeak = "Now we will talk about finding apps in your tablet.\n";
 
-const Gesture10 = ({ navigation }) => {
+const Gesture10 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          Now we will talk about finding apps in your tablet
+  {textToSpeak}
         </Text>
+      </View>
+      <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
+      {/* <Button
         title="Go to next gesture"
         onPress={() => navigation.navigate("Gesture11")}
-      />
+      /> */}
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture11")}
+          onPress={() => navigation.navigate("Gesture11", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -88,20 +91,22 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "absolute",
-    top: "20%",
+    top: "40%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   appButtonView: {
+    marginTop: "80%",
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
+    // top: "125%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -112,5 +117,11 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    position: "relative",
+    top: "40%",
+    //bottom: "10%",
+    //width: 100,
   },
 });

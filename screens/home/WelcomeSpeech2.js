@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 
 import {
   StyleSheet,
@@ -18,9 +18,10 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeSpeech2 = ({ navigation }) => {
-  var textToSpeak1 = "At any point click\n";
-  var textToSpeak2 = "to have the text read out loud";
+const WelcomeSpeech2 = ({ route, navigation }) => {
+  var textToSpeak1 = "At any point click\nthe speaker icon\n";
+  var textToSpeak2 = "to have the text read out loud.";
+  AutoReadText(route.params.readText, textToSpeak1 + textToSpeak2);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -35,7 +36,7 @@ const WelcomeSpeech2 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeIntroductoryVideo")}
+          onPress={() => navigation.navigate("WelcomeIntroductoryVideo", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -55,8 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "5%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -65,8 +65,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "50%",
+    bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    marginTop: "40%",
+    bottom: "10%",
     //width: 100,
   },
   buttonView: {
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
   },
   YesButtonContainer: {
     width: "25%",
-    marginTop: "55%",
+    marginBottom: "20%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

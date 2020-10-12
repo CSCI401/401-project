@@ -30,13 +30,13 @@ const WelcomeSpeech = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeSpeech2")}
+          onPress={() => navigation.navigate("WelcomeSpeech2", {readText: true})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeSpeech2")}
+          onPress={() => navigation.navigate("WelcomeSpeech2", {readText: false})}
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>

@@ -17,18 +17,25 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Wifi7 = ({ navigation }) => {
-  const textToSpeech =
-    "Usually, your WiFi username and password can be found on the router. Click next to see picture exmaple.";
+import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
+
+const Wifi7 = ({ route, navigation }) => {
+  var textToSpeak =
+    "Usually, your WiFi username and password can be found on the router. Click next to see a picture example.";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi8")}
+          onPress={() => navigation.navigate("Wifi8", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

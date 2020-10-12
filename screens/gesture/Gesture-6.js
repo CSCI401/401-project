@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -18,33 +18,36 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "This is the home button\n";
+var textToSpeak = "This is the home button.\n";
 
-const Gesture6 = ({ navigation }) => {
+const Gesture6 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>This is the home button</Text>
+        <View style={styles.container1}>
+          <Image
+            style={styles.image}
+            source={require("../../assets/firescreenshot.png")}
+            resizeMode="stretch"
+          />
+          <Text style={styles.text}>{textToSpeak}</Text>
+        </View>
+        <View style={styles.container2}>
+          <Image
+            style={styles.backimage}
+            source={require("../../assets/homebutton.png")}
+            resizeMode="stretch"
+          />
+        </View>
       </View>
-      <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-      <Image
-        style={styles.image}
-        source={require("../../assets/firescreenshot.png")}
-        resizeMode="stretch"
-      />
-      <Image
-        style={styles.backimage}
-        source={require("../../assets/homebutton.png")}
-        resizeMode="stretch"
-      />
-      <Button
-        title="Next gesture page"
-        onPress={() => navigation.navigate("Gesture7")}
-      />
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
+      </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture7")}
+          onPress={() => navigation.navigate("Gesture7", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -63,55 +66,37 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "10%",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  text: {
-    textAlign: "center",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    fontSize: 60,
-  },
-  appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textButton: {
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "relative",
-    top: "20%",
-    justifyContent: "flex-end",
+    top: "10%",
     alignItems: "center",
+    flexWrap: "wrap",
+  },
+  container1: {
+    width: "90%",
     textAlign: "center",
-    paddingRight: 200,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  container2: {
+    width: "10%",
+  },
+  text: {
+    justifyContent: "flex-start",
+    top: "0%",
+    fontSize: 50,
   },
   appButtonView: {
     width: "100%",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
+    width: "25%",
+    bottom: "70%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -122,20 +107,27 @@ const styles = StyleSheet.create({
   appButtonText: {
     fontSize: 60,
   },
-  image: {
-    // flex: 1,
-    width: "45%",
-    height: "50%",
+  imageContainer: {
+    width: "100%",
     position: "relative",
-    top: 400,
-    left: 150,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   image: {
-    // flex: 1,
-    width: "30%",
-    height: "30%",
+    width: "55%",
+    height: "60%",
     position: "relative",
-    top: 600,
-    left: 150,
+    top: "0%",
+  },
+  speaker: {
+    position: "relative",
+    bottom: "15%",
+  },
+  backimage: {
+    width: "100%",
+    height: "7%",
+    position: "relative",
+    top: "26%",
   },
 });

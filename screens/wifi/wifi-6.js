@@ -16,25 +16,32 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi6 = ({ navigation }) => {
-  const textToSpeech =
-    "Next, you need to select your wifi, \nand enter the passwords.\n \nDo you know what are they?";
+const Wifi6 = ({ route, navigation }) => {
+  var textToSpeak =
+    "Next, you need to select your wifi \nand enter the passwords.\n \nDo you know what they are?";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
+
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi11")}
+          onPress={() => navigation.navigate("Wifi11", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi7")}
+          onPress={() => navigation.navigate("Wifi7", {readText: route.params.readText})}
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    //top: "25%",
+    top: "15%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -125,5 +132,8 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    right: "20%",
   },
 });

@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -18,23 +18,22 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Now we will go through screen gestures\n";
+var textToSpeak = "Now we will go through screen gestures.";
 
-const Gesture13 = ({ navigation }) => {
+const Gesture13 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>Now we will go through screen gestures</Text>
+  <Text style={styles.text}>{textToSpeak}</Text>
+      </View>
+      <View style={styles.speakerContainer}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture14")}
-      />
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture14")}
+          onPress={() => navigation.navigate("Gesture14", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -54,9 +53,9 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
+    //flex: 1,
+    position: "relative",
+    top: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -71,8 +70,9 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
   appButtonContainer: {
-    top: "1150%",
-    position: "relative",
+    top: "65%",
+    //position: "absolute",
+    //padding: "1%",
     width: "45%",
     borderWidth: 3,
     borderRadius: 20,
@@ -81,31 +81,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
+  speakerContainer: {
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
+    position: "relative",
     alignItems: "center",
     textAlign: "center",
+    marginTop: "30%",
   },
   appButtonView: {
+    marginTop: "15%",
     width: "100%",
     textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
   },
   appButtonText: {

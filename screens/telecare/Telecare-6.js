@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
 import {
   StyleSheet,
@@ -17,9 +18,10 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Telecare6 = ({ navigation }) => {
+const Telecare6 = ({ route, navigation }) => {
   var textToSpeak =
     "Now you have learned how to access your emails.\n\nLet's check in to your appointments.";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -32,7 +34,7 @@ const Telecare6 = ({ navigation }) => {
       {/* <Speaker text={textToSpeak}></Speaker> */}
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare7")}
+          onPress={() => navigation.navigate("Telecare7", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

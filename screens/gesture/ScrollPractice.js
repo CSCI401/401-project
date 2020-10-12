@@ -10,14 +10,16 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import * as Speech from "expo-speech";
+import AutoReadText from "../../components/AutoReadText";
 
 export default class App extends React.Component {
   speak() {
-    var thingToSay =
-      "Drag your finger from the bottom of the screen to the top to scroll!";
-    Speech.speak(thingToSay);
+    var textToSpeak = "Drag your finger from the bottom of the screen to the top to scroll!";
+    Speech.speak(textToSpeak);
   }
   render() {
+    var textToSpeak = "Drag your finger from the bottom of the screen to the top to scroll!";
+    AutoReadText(this.props.navigation.readText, this.props.route.params.readText);
     return (
       <SafeAreaView style={styles.container}>
         <Button title="Press to hear some words" onPress={this.speak} />

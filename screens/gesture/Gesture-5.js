@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -19,28 +19,25 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "The back button will take you back\n to the most recent page in the app";
+  "The back button will take you back\n to the most recent page in the app.";
 
-const Gesture5 = ({ navigation }) => {
+const Gesture5 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          The back button will take you back to the most recent page in the app
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
+      </View>
+      <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture6")}
-      />
-      <View style={styles.appButtonView}>
+      <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture6")}
-          style={styles.appButtonContainer}
+          onPress={() => navigation.navigate("Gesture6", {readText: route.params.readText})}
+          style={styles.YesButtonContainer}
         >
-          <Text style={styles.appButtonText}>Next</Text>
+          <Text style={styles.YesButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -53,30 +50,35 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     position: "relative",
-    width: "100%",
   },
   container: {
+    flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
+    bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    fontSize: 80,
+    fontSize: 60,
   },
-  appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    top: "1150%",
+  speaker: {
     position: "relative",
-    width: "45%",
+    bottom: "15%",
+    //width: 100,
+  },
+  buttonView: {
+    width: "100%",
+    position: "relative",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonContainer: {
+    width: "25%",
+    marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -84,34 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    top: "1020%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
 });

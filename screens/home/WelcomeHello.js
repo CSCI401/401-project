@@ -19,6 +19,9 @@ import {
 } from "react-native";
 import TTS from "../../components/TextToSpeech";
 
+// import { LogBox } from "react-native";
+// LogBox.ignoreWarnings(["Setting a timer"]);
+
 const WelcomeHello = ({ navigation }) => {
   var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
 
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    bottom: "20%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -103,11 +106,11 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
+    bottom: "20%",
     //width: 100,
   },
   textInputContainer: {
-    bottom: "4%",
+    bottom: "10%",
     position: "relative",
     height: "10%",
     width: "100%",
@@ -123,15 +126,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonView: {
+    bottom: "8%",
     width: "100%",
     position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
+  appButtonContainer: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    //top: "20%",
+  },
   YesButtonContainer: {
     width: "25%",
-    marginBottom: "15%",
+    //marginBottom: "70%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

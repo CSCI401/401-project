@@ -16,13 +16,17 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi4 = ({ navigation }) => {
+const Wifi4 = ({ route, navigation }) => {
+  var textToSpeak = "Next, click on the setting icon.";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>Next, click on the setting icon.</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image1}
           source={require("../../assets/wifi4.png")}
@@ -31,10 +35,13 @@ const Wifi4 = ({ navigation }) => {
           style={styles.image2}
           source={require("../../assets/wifi4-1.png")}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi5")}
+          onPress={() => navigation.navigate("Wifi5", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -122,5 +129,9 @@ const styles = StyleSheet.create({
   },
   NoButtonText: {
     fontSize: 60,
+  },
+  speaker: {
+    top: "20%",
+    right: "20%",
   },
 });

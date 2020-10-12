@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
 import {
   StyleSheet,
@@ -17,8 +18,9 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeIntroductoryVideo = ({ navigation }) => {
-  var textToSpeak = "Let's explain this app\n";
+const WelcomeIntroductoryVideo = ({ route, navigation }) => {
+  var textToSpeak = "Let's explain this app.\n";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -36,7 +38,7 @@ const WelcomeIntroductoryVideo = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeThankYou")}
+          onPress={() => navigation.navigate("WelcomeThankYou", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -63,8 +65,6 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    // justifyContent: "center",
-    // alignItems: "center",
     fontSize: 60,
   },
   speaker: {

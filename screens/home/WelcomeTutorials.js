@@ -16,7 +16,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-const WelcomeTutorials = ({ navigation }) => {
+const WelcomeTutorials = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -25,7 +25,7 @@ const WelcomeTutorials = ({ navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare1")}
+          onPress={() => navigation.navigate("Telecare1", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Telecare</Text>
@@ -33,26 +33,26 @@ const WelcomeTutorials = ({ navigation }) => {
       </View>
       <View style={styles.wifiButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
+          onPress={() => navigation.navigate("Wifi1", {readText: route.params.readText})}
           style={styles.wifiButtonContainer}
         >
           <Text style={styles.wifiButtonText}>Setup my Wifi</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.emailsButtonView}>
+      <View style={styles.gestureButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture1")}
-          style={styles.emailsButtonContainer}
+          onPress={() => navigation.navigate("Gesture1", {readText: route.params.readText})}
+          style={styles.gestureButtonContainer}
         >
-          <Text style={styles.emailsButtonText}>Learn Gestures</Text>
+          <Text style={styles.gestureButtonText}>Learn Gestures</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.gesturesButtonView}>
+      <View style={styles.emailButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1")}
-          style={styles.gesturesButtonContainer}
+          onPress={() => navigation.navigate("Email1", {readText: route.params.readText})}
+          style={styles.emailButtonContainer}
         >
-          <Text style={styles.gesturesButtonText}>Emails</Text>
+          <Text style={styles.emailButtonText}>Emails</Text>
         </TouchableOpacity>
       </View>
       <Footer></Footer>
@@ -121,14 +121,14 @@ const styles = StyleSheet.create({
   wifiButtonText: {
     fontSize: 60,
   },
-  emailsButtonView: {
+  gestureButtonView: {
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  emailsButtonContainer: {
-    top: "-50%",
+  gestureButtonContainer: {
+    bottom: "50%",
     position: "relative",
     width: "75%",
     height: "30%",
@@ -139,17 +139,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  emailsButtonText: {
+  gestureButtonText: {
     fontSize: 60,
   },
-  gesturesButtonView: {
+  emailButtonView: {
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  gesturesButtonContainer: {
-    top: "-100%",
+  emailButtonContainer: {
+    bottom: "105%",
     position: "relative",
     width: "75%",
     height: "30%",
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  gesturesButtonText: {
+  emailButtonText: {
     fontSize: 60,
   },
 });
