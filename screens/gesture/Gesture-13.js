@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Now we will go through screen gestures.\n";
+var textToSpeak = "Now we will go through screen gestures.";
 
 const Gesture13 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
@@ -26,7 +26,7 @@ const Gesture13 = ({ route, navigation }) => {
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>Now we will go through screen gestures</Text>
+  <Text style={styles.text}>{textToSpeak}</Text>
       </View>
       <View style={styles.speakerContainer}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>

@@ -19,9 +19,10 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Touch the screen and unpinch your fingers to zoom in.\n Watch the demonstration below. \n";
+  "Touch the screen and unpinch your fingers to zoom in.\n Watch the demonstration below.";
 
 const Gesture17 = ({ route, navigation }) => {
+  console.log(navigation);
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>

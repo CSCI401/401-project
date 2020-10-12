@@ -19,7 +19,7 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Zoom in on the next page to see the flower details. \n \n Hit next when done.";
+  "Zoom in on the next page to see the flower details. \n Hit next when done.";
 
 const Gesture15 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);

@@ -4,11 +4,13 @@ import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/R
 
 export default class App extends React.Component {
   render() {
+    console.log(this.props.route.params.readText);
+
     return (
       <View style={styles.container}>
         <Button
           title="Next"
-          onPress={() => this.props.navigation.navigate("Gesture17", {readText: this.route.params.readText})}
+          onPress={() => this.props.navigation.navigate("Gesture17", {readText: this.props.route.params.readText})}
         />
         <Text style={styles.textWrapper}>Practice Zoom out here </Text>
         <View style={styles.zoomWrapper}>

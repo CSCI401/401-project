@@ -3,6 +3,6 @@ import React from "react";
 import ZoomOutPractice from "./ZoomOutPractice";
 
 const Gesture16 = ({ route, navigation }) => {
-  return <ZoomOutPractice navigation={navigation, {readText: route.params.readText}}></ZoomOutPractice>;
+  return <ZoomOutPractice navigation={navigation} route={route}></ZoomOutPractice>;
 };
 export default Gesture16;

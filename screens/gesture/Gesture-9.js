@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Clicking the square will look like this.\n";
+var textToSpeak = "Clicking the square will look like this.";
 
 const Gesture9 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
