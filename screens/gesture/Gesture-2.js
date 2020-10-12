@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -20,7 +20,8 @@ import {
 
 var textToSpeak = "First, we will go through the buttons on your tablet.";
 
-const Gesture2 = ({ navigation }) => {
+const Gesture2 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -32,7 +33,7 @@ const Gesture2 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture3")}
+          onPress={() => navigation.navigate("Gesture3", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

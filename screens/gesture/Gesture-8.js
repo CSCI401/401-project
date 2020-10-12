@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -20,7 +20,8 @@ import {
 
 var textToSpeak = "Tap this button to flip between open apps.\n";
 
-const Gesture8 = ({ navigation }) => {
+const Gesture8 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
@@ -46,7 +47,7 @@ const Gesture8 = ({ navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture9")}
+          onPress={() => navigation.navigate("Gesture9", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

@@ -16,10 +16,13 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import { WebView } from 'react-native-webview';
+
 
 const Telecare1 = ({ navigation }) => {
   var textToSpeak = "Telecare Introduction\n";
   return (
+    
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
@@ -28,12 +31,10 @@ const Telecare1 = ({ navigation }) => {
       <View style={styles.speaker}>
         <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
-      <View style={styles.image1}>
-        <Image
-          style={styles.image2}
-          source={require("../../assets/IntroductoryVideoScreenshot.png")}
+      <WebView
+            style={styles.image2}
+            source={{uri: 'https://www.youtube.com/embed/eERe0-E4Zpg' }}
         />
-      </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Telecare2")}
@@ -79,14 +80,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image2: {
-    justifyContent: "center",
-    alignItems: "center",
     position: "relative",
-    bottom: "20%",
-    width: 500,
-    height: 300,
   },
   buttonView: {
+    top: "5%",
     width: "100%",
     position: "relative",
     textAlign: "center",

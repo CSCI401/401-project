@@ -25,7 +25,7 @@ const Email1 = ({ navigation }) => {
           Hello, Glory. {"\n"}Welcome to the email tutorial!
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi2")}
+          onPress={() => navigation.navigate("Wifi2"), {readText: route.params.readText}}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

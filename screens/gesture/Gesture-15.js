@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -21,21 +21,20 @@ import {
 var textToSpeak =
   "Zoom out on the next page to see the full flower. \n \n Hit next when done.";
 
-const Gesture15 = ({ navigation }) => {
+const Gesture15 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Zoom out on the next page to see the full flower.Hit next when done
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
       </View>
       <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture16")}
+          onPress={() => navigation.navigate("Gesture16", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

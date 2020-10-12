@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -18,15 +18,16 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "You can also search for an app with the name.\n";
+var textToSpeak = "You can also search for an app with the name.";
 
-const Gesture12 = ({ navigation }) => {
+const Gesture12 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
-          You can also search for an app with the name
+          {textToSpeak}
         </Text>
       </View>
       <View style={styles.speakerContainer}>
@@ -39,7 +40,7 @@ const Gesture12 = ({ navigation }) => {
       />
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture13")}
+          onPress={() => navigation.navigate("Gesture13", {readText: route.params.readText})}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

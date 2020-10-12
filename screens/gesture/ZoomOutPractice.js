@@ -8,16 +8,16 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Button
           title="Next"
-          onPress={() => this.props.navigation.navigate("Gesture17")}
+          onPress={() => this.props.navigation.navigate("Gesture17", {readText: this.route.params.readText})}
         />
         <Text style={styles.textWrapper}>Practice Zoom out here </Text>
         <View style={styles.zoomWrapper}>
           <ReactNativeZoomableView
             zoomEnabled={true}
             maxZoom={5}
-            minZoom={0.5}
-            zoomStep={0.25}
-            initialZoom={1.5}
+            minZoom={1}
+            // zoomStep={0.25}
+            initialZoom={2}
             bindToBorders={true}
             onZoomAfter={this.logOutZoomState}
             style={styles.zoomableView}

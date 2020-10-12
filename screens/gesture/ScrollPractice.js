@@ -13,11 +13,12 @@ import * as Speech from "expo-speech";
 
 export default class App extends React.Component {
   speak() {
-    var thingToSay =
-      "Drag your finger from the bottom of the screen to the top to scroll!";
-    Speech.speak(thingToSay);
+    var textToSpeak = "Drag your finger from the bottom of the screen to the top to scroll!";
+    Speech.speak(textToSpeak);
   }
   render() {
+    var textToSpeak = "Drag your finger from the bottom of the screen to the top to scroll!";
+    AutoReadText(route.params.readText, textToSpeak);
     return (
       <SafeAreaView style={styles.container}>
         <Button title="Press to hear some words" onPress={this.speak} />
