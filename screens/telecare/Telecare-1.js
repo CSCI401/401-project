@@ -17,10 +17,11 @@ import {
   ImageBackground,
 } from "react-native";
 import { WebView } from 'react-native-webview';
+import AutoReadText from "../../components/AutoReadText";
 
-
-const Telecare1 = ({ navigation }) => {
+const Telecare1 = ({ route, navigation }) => {
   var textToSpeak = "Telecare Introduction\n";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     
     <SafeAreaView style={styles.outerContainer}>
@@ -37,7 +38,7 @@ const Telecare1 = ({ navigation }) => {
         />
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare2")}
+          onPress={() => navigation.navigate("Telecare2", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
