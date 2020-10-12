@@ -16,15 +16,17 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi9 = ({ navigation }) => {
-  const textToSpeech =
+const Wifi9 = ({ route, navigation }) => {
+  const textToSpeak =
     "There is usually a sticker on the router that tells you the WiFi name and password. Can you find the sticker?";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
           source={require("../../assets/wifi_info.gif")}
@@ -32,13 +34,13 @@ const Wifi9 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi11")}
+          onPress={() => navigation.navigate("Wifi11", {readText: route.params.readText})}
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi10")}
+          onPress={() => navigation.navigate("Wifi10", {readText: route.params.readText})}
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>
