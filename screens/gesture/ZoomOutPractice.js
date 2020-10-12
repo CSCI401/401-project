@@ -4,8 +4,6 @@ import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/R
 
 export default class App extends React.Component {
   render() {
-    console.log(this.props.route.params.readText);
-
     return (
       <View style={styles.container}>
         <Button
