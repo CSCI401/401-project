@@ -24,7 +24,7 @@ const Wifi4 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
@@ -41,7 +41,9 @@ const Wifi4 = ({ route, navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi5", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Wifi5", { readText: route.params.readText })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

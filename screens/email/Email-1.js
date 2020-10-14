@@ -19,13 +19,16 @@ import {
 const Email1 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>
           Hello, Glory. {"\n"}Welcome to the email tutorial!
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi2"), {readText: route.params.readText}}
+          onPress={
+            (() => navigation.navigate("Wifi2"),
+            { readText: route.params.readText })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

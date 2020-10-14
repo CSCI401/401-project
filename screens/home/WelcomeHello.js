@@ -63,7 +63,7 @@ const WelcomeHello = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>

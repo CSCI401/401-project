@@ -21,10 +21,10 @@ import {
 const Telecare9 = ({ route, navigation }) => {
   var textToSpeak =
     'If you are willing to have the appointment, click "Sign".\n';
-    AutoReadText(route.params.readText, textToSpeak);
-    return (
+  AutoReadText(route.params.readText, textToSpeak);
+  return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
 
       <View style={styles.image1}>
         <Image
@@ -43,7 +43,11 @@ const Telecare9 = ({ route, navigation }) => {
 
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare10", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Telecare10", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
     width: 500,
     height: 300,
-    resizeMode: "contain"
+    resizeMode: "contain",
   },
   buttonView: {
     width: "100%",

@@ -24,7 +24,7 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak1 + textToSpeak2);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak1}</Text>
       </View>
@@ -36,7 +36,11 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeIntroductoryVideo", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("WelcomeIntroductoryVideo", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

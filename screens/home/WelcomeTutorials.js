@@ -19,13 +19,17 @@ import {
 const WelcomeTutorials = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>Tutorials{"\n"}</Text>
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Telecare1", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Telecare</Text>
@@ -33,7 +37,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.wifiButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Wifi1", { readText: route.params.readText })
+          }
           style={styles.wifiButtonContainer}
         >
           <Text style={styles.wifiButtonText}>Setup my Wifi</Text>
@@ -41,7 +47,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.gestureButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Gesture1", { readText: route.params.readText })
+          }
           style={styles.gestureButtonContainer}
         >
           <Text style={styles.gestureButtonText}>Learn Gestures</Text>
@@ -49,7 +57,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.emailButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Email1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Email1", { readText: route.params.readText })
+          }
           style={styles.emailButtonContainer}
         >
           <Text style={styles.emailButtonText}>Emails</Text>

@@ -24,7 +24,7 @@ const Gesture6 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <View style={styles.container1}>
           <Image
@@ -47,7 +47,9 @@ const Gesture6 = ({ route, navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture7", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Gesture7", { readText: route.params.readText })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>

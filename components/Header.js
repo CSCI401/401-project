@@ -10,44 +10,61 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   ImageBackground,
+  TouchableHighlight,
 } from "react-native";
 
-function Header() {
+function Header(props) {
   return (
     <View style={styles.header}>
       <Image style={styles.image} source={require("../assets/keck.png")} />
+      <TouchableHighlight
+        onPress={
+          () =>
+            props.navigation.navigate("WelcomeTutorials", {
+              readText: false,
+            })
+          //console.log("Something")
+        }
+        style={styles.homebutton}
+        activeOpacity={0.5}
+      >
+        <Image
+          style={styles.imagehome}
+          source={require("../assets/iconhome.png")}
+          resizeMode="stretch"
+        />
+      </TouchableHighlight>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   image: {
-    flex: 1,
-    marginRight: "65%",
     marginTop: "6%",
+    //top: "6%",
     //marginLeft: "20%",
     resizeMode: "contain",
   },
   header: {
-    //flex: 1,
-    //flexDirection: "row",
-    //width: "100%",
+    flexDirection: "row",
     height: "12%",
-    position: "relative",
-    // left: 0,
-    // right: 0,
-    // bottom: 0,
-    // top: 50,
-    // height: 90,
-    // float: "left",
+    // position: "relative",
     backgroundColor: "#990000",
-    // flexDirection: "row",
-    // width: "100%",
-    // height: "10%",
-    // flex: 1,
-    // height: 20,
-    // justifyContent: "flex-start",
-    // backgroundColor: "#990000",
+  },
+  homebutton: {
+    flex: 1,
+    height: 70,
+    margin: 5,
+    marginTop: "6%",
+    //top: "6%",
+    alignItems: "flex-end",
+  },
+  imagehome: {
+    height: "100%",
+    width: "20%",
+    marginRight: "0%",
+    //right: "0%",
+    alignItems: "flex-end",
   },
 });
 
