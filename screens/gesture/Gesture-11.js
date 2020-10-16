@@ -85,9 +85,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "90%",
+    //top: "90%",
     //position: "relative",
-    width: "45%",
+    marginTop: "13%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

@@ -7,6 +7,7 @@ import {
   Button,
   ScrollView,
   SafeAreaView,
+  TouchableOpacity,
 } from "react-native";
 import Constants from "expo-constants";
 import * as Speech from "expo-speech";
@@ -19,41 +20,51 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      // <SafeAreaView style={styles.container}>
+      <View>
         <Button title="Press to hear some words" onPress={this.speak} />
-        <ScrollView style={styles.scrollView}>
-          <Text style={styles.text}>
-            Drag your finger from the bottom of the screen to the top to scroll!{" "}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            Keep scrolling.... {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}Keep scrolling.... {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}Keep scrolling.... {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}Almost there.... {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}Nice work! This is the hidden message :) have a great day!{" "}
-            {"\n"}
-          </Text>
-        </ScrollView>
-      </SafeAreaView>
+
+        <Text style={styles.text}>
+          Drag your finger from the bottom of the screen to the top to scroll!{" "}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          Keep scrolling.... {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}Keep scrolling.... {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}Keep scrolling.... {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}Almost there.... {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}
+          {"\n"}Nice work! This is the hidden message :) have a great day!{" "}
+          {"\n"}
+        </Text>
+        {/* <View style={styles.appButtonView}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("WelcomeTutorials")}
+              style={styles.appButtonContainer}
+            >
+              <Text style={styles.appButtonText}>Next</Text>
+            </TouchableOpacity>
+          </View> */}
+        {/* </ScrollView> */}
+      </View>
+      // </SafeAreaView>
     );
   }
 }

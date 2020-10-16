@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginTop: "12%",
   },
   appButtonText: {
-    fontSize: 80,
+    fontSize: 60,
   },
   appButtonContainer: {
     width: "25%",
@@ -95,8 +95,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
-  },
-  appButtonText: {
-    fontSize: 60,
   },
 });

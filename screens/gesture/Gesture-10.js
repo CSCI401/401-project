@@ -74,17 +74,6 @@ const styles = StyleSheet.create({
   appButtonText: {
     fontSize: 80,
   },
-  appButtonContainer: {
-    top: "1150%",
-    position: "relative",
-    width: "45%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   textButton: {
     flexDirection: "row",
     width: "100%",
@@ -106,7 +95,7 @@ const styles = StyleSheet.create({
     // top: "125%",
     //position: "absolute",
     //padding: "1%",
-    width: "45%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

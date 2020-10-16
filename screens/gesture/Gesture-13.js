@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     fontSize: 80,
   },
   appButtonContainer: {
-    top: "65%",
+    //top: "65%",
     //position: "absolute",
     //padding: "1%",
-    width: "45%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

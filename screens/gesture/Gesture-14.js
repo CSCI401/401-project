@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
   },
   appButtonContainer: {
     width: "25%",
-    bottom: "60%",
+    //bottom: "60%",
+    marginBottom: "15%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   speakerContainer: {
-    top: "0%",
+    //top: "0%",
     width: "100%",
     position: "relative",
     alignItems: "center",

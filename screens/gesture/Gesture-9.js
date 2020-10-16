@@ -77,10 +77,11 @@ const styles = StyleSheet.create({
     //padding: "1%",
   },
   appButtonContainer: {
-    top: "65%",
+    //top: "65%",
+    marginTop: "10%",
     //position: "absolute",
     //padding: "1%",
-    width: "45%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
