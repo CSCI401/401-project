@@ -18,13 +18,15 @@ import {
 } from "react-native";
 
 import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi7 = ({ navigation }) => {
+const Wifi7 = ({ route, navigation }) => {
   var textToSpeak =
-    "Usually, your WiFi username and password can be found on the router. Click next to see picture exmaple.";
+    "Usually, your WiFi username and password can be found on the router. Click next to see a picture example.";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speaker}>
@@ -33,7 +35,9 @@ const Wifi7 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi8")}
+          onPress={() =>
+            navigation.navigate("Wifi8", { readText: route.params.readText })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

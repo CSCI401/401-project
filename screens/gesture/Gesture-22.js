@@ -10,12 +10,15 @@ import React from "react";
 import ScrollPractice from "./ScrollPractice";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Constants from "expo-constants";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const Gesture22 = ({ navigation }) => {
+const Gesture22 = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+      <Header navigation={navigation}></Header>
       <ScrollView style={styles.scrollView}>
-        <ScrollPractice navigation={navigation}></ScrollPractice>
+        <ScrollPractice navigation={navigation} route={route}></ScrollPractice>
         <View style={styles.appButtonView}>
           <TouchableOpacity
             onPress={() => navigation.navigate("WelcomeTutorials")}
@@ -25,8 +28,11 @@ const Gesture22 = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      <Footer></Footer>
     </SafeAreaView>
   );
+  // const Gesture22 = ({ route, navigation }) => {
+  //   return <ScrollPractice navigation={navigation} route={route}></ScrollPractice>;
 };
 const styles = StyleSheet.create({
   scrollView: {
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
   },
   appButtonContainer: {
     padding: 50,
-    width: "50%",
+    width: "45%",
     marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,

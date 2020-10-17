@@ -205,6 +205,11 @@ export default function App() {
           options={{ header: () => null }}
         />
         <Stack.Screen
+          name="Email6"
+          component={Email6}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
           name="ZoomIn"
           component={ZoomInPractice}
           options={{ header: () => null }}

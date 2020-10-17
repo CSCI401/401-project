@@ -21,6 +21,8 @@ import TTS from "../../components/TextToSpeech";
 
 //import { LogBox } from "react-native";
 //LogBox.ignoreWarnings(["Setting a timer"]);
+// import { LogBox } from "react-native";
+// LogBox.ignoreWarnings(["Setting a timer"]);
 
 const WelcomeHello = ({ navigation }) => {
   var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
@@ -63,7 +65,7 @@ const WelcomeHello = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>

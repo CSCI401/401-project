@@ -18,19 +18,25 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi10 = ({ navigation }) => {
-  const textToSpeech =
+const Wifi10 = ({ route, navigation }) => {
+  const textToSpeak =
     "You might want to call a family member or your internet provider to find out more about the Wifi name and password.";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>{textToSpeech}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeTutorials")}
+          onPress={() =>
+            navigation.navigate("WelcomeTutorials", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Go back to home page</Text>

@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -19,24 +19,26 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Scroll down on the next page to see the hidden message! \n \n Hit next when done";
+  "Scroll down on the next page to see the hidden message! \n \n Hit next when done.";
 
-const Gesture21 = ({ navigation }) => {
+const Gesture21 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Scroll down on the next page to see the hidden message! Hit next when
-          done
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speakerContainer}>
           <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
         </View>
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture22")}
+          onPress={() =>
+            navigation.navigate("Gesture22", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "flex-end",
     fontSize: 60,
-    marginTop: "12%",
+    marginTop: "25%",
   },
   appButtonText: {
     fontSize: 60,
@@ -76,6 +78,7 @@ const styles = StyleSheet.create({
   appButtonContainer: {
     width: "25%",
     marginBottom: "25%",
+    marginTop: "5%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   speakerContainer: {
-    marginTop: "15%",
+    marginTop: "10%",
     width: "100%",
     position: "relative",
     alignItems: "center",

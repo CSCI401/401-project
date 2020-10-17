@@ -17,13 +17,14 @@ import {
   ImageBackground,
 } from "react-native";
 import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
-const Wifi3 = ({ navigation }) => {
+const Wifi3 = ({ route, navigation }) => {
   var textToSpeak = "You should be able to see this page.";
-
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
@@ -36,7 +37,9 @@ const Wifi3 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi4")}
+          onPress={() =>
+            navigation.navigate("Wifi4", { readText: route.params.readText })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

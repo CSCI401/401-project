@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -19,23 +19,26 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Zoom in on the next page to see the flower details. \n \n Hit next when done";
+  "Zoom in on the next page to see the flower details. \n Hit next when done.";
 
-const Gesture15 = ({ navigation }) => {
+const Gesture15 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Zoom in on the next page to see the flower details.Hit next when done
-        </Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speakerContainer}>
           <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
         </View>
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture19")}
+          onPress={() =>
+            navigation.navigate("Gesture19", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -63,6 +66,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   text: {
+    marginTop: "15%",
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",

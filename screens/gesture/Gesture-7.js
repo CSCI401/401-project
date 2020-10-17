@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -19,12 +19,13 @@ import {
 } from "react-native";
 
 var textToSpeak =
-  "Use the home button to return to the screen of apps\n \n You can find our app there if you exit out";
+  "Use the home button to return to the screen of apps.\n \n You can find our app there if you exit out.";
 
-const Gesture7 = ({ navigation }) => {
+const Gesture7 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
@@ -33,7 +34,9 @@ const Gesture7 = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture8")}
+          onPress={() =>
+            navigation.navigate("Gesture8", { readText: route.params.readText })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

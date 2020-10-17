@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import AutoReadText from "../../components/AutoReadText";
 
 import {
   StyleSheet,
@@ -17,11 +18,12 @@ import {
   ImageBackground,
 } from "react-native";
 
-const Telecare7 = ({ navigation }) => {
-  var textToSpeak = "Click on the check-in button\nto join the waiting room\n";
+const Telecare7 = ({ route, navigation }) => {
+  var textToSpeak = "Click on the check-in button to join the waiting room.\n";
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
 
       <View style={styles.image1}>
         <Image
@@ -40,7 +42,11 @@ const Telecare7 = ({ navigation }) => {
 
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare8")}
+          onPress={() =>
+            navigation.navigate("Telecare8", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
@@ -61,20 +67,21 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     bottom: "10%",
+    marginTop: "8%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 50,
   },
   speaker: {
     position: "relative",
-    bottom: "10%",
+    bottom: "8%",
   },
   image1: {
-    marginTop: "20%",
+    marginTop: "15%",
     width: "100%",
     position: "relative",
     textAlign: "center",
@@ -88,6 +95,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
     width: 500,
     height: 300,
+    resizeMode: "contain",
   },
   buttonView: {
     width: "100%",

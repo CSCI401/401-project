@@ -21,7 +21,7 @@ const WelcomeSpeech = ({ navigation }) => {
   var textToSpeak = "Would you like to be\nread the tutorial?";
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
@@ -30,13 +30,17 @@ const WelcomeSpeech = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeSpeech2")}
+          onPress={() =>
+            navigation.navigate("WelcomeSpeech2", { readText: true })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeSpeech2")}
+          onPress={() =>
+            navigation.navigate("WelcomeSpeech2", { readText: false })
+          }
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>

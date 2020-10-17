@@ -4,7 +4,7 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
-import TTS from "../../components/TextToSpeech";
+import AutoReadText from "../../components/AutoReadText";
 import {
   StyleSheet,
   Text,
@@ -18,12 +18,13 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak = "Tap this button to flip between open apps\n";
+var textToSpeak = "Tap this button to flip between open apps.\n";
 
-const Gesture8 = ({ navigation }) => {
+const Gesture8 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <View style={styles.container1}>
           <Image
@@ -46,7 +47,9 @@ const Gesture8 = ({ navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture9")}
+          onPress={() =>
+            navigation.navigate("Gesture9", { readText: route.params.readText })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -84,6 +87,7 @@ const styles = StyleSheet.create({
   text: {
     justifyContent: "flex-start",
     top: "0%",
+    marginLeft: "5%",
     fontSize: 50,
   },
   appButtonView: {
@@ -128,5 +132,6 @@ const styles = StyleSheet.create({
     height: "7%",
     position: "relative",
     top: "26%",
+    right: "30%",
   },
 });
