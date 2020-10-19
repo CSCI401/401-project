@@ -1,12 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-
 import { Component } from "react";
 import Wifi2 from "./wifi-2.js";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import AsyncStorage from "@react-native-community/async-storage";
+import React, { useEffect, useState } from "react";
 
 import {
   StyleSheet,
@@ -22,8 +22,26 @@ import {
 } from "react-native";
 
 const Wifi1 = ({ route, navigation }) => {
-  var textToSpeak = "Hello, Glory. \n Welcome to the wifi tutorial!";
   AutoReadText(route.params.readText, textToSpeak);
+  const [name, setName] = useState("friend");
+  var textToSpeak =`Hello ${name}, would you like to be\nread the tutorial?`
+  const readName = async () => {
+    try {
+      const value = await AsyncStorage.getItem('name');
+      if (value!== null) {
+        setName(value);
+      }else{
+        console.log("value is null");
+      }
+    } catch (error) {
+      console.log("error in readName");
+    }
+  };
+  useEffect(() => {
+    readName();
+  });
+
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

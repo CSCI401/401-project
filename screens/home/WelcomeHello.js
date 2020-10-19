@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import { firestore } from "../../config/firebase";
+import AsyncStorage from "@react-native-community/async-storage";
 
 import {
   StyleSheet,
@@ -25,43 +26,76 @@ import TTS from "../../components/TextToSpeech";
 // LogBox.ignoreWarnings(["Setting a timer"]);
 
 const WelcomeHello = ({ navigation }) => {
-  var textToSpeak = "Hello,\nI am Daisy.\n \nWhat's your name?";
+  const [name, setName] = useState('')
+  var textToSpeak = "Hello,\nI am Daisy.\n \nWhat would you like to be called?";
+
+  const createUser = () => {
+    
+    firestore
+      .collection("newUsers")
+      .add({
+        name: name
+      })
+      .then((user) => {
+
+          user
+          .get()
+          .then(doc => {
+            
+            AsyncStorage.setItem('id', doc.id);
+            AsyncStorage.setItem('name', doc.data().name);
+            AsyncStorage.setItem('state', doc.data().state);
+            
+            
+            navigation.navigate("WelcomeSpeech");
+            console.log("Document written with ID: ", user.id);
+
+          })
+          .catch(error => {
+            console.error("Error adding document: ", error);
+          })
+
+      })
+      .catch( (error) => {
+        console.error("Error adding document: ", error);
+      });
+
+  } 
 
   useEffect(() => {
-    console.log("inside the useEffect");
-    firestore
-      .collection("users")
-      .doc("jw8xAngn4rGMyfEv6VTr")
-      .get()
-      .then((doc) => {
-        console.log(doc.id);
-        console.log(doc.data());
-      });
+    (async () => {
+    let id =  await AsyncStorage.getItem('id');
+    console.log("the ID is: ", id);
+      if (id !== null) {
+        firestore
+          .collection('newUsers')
+          .doc(id)
+          .get()
+          .then(doc => {
+            navigation.navigate("WelcomeSpeech");
+        })
+          .catch(error => {
+          console.log(error)
+        })
+      }
+
+    })()
   }, []);
-  //the above will only render the first time component mount
-  useEffect(() => {
-    console.log("inside the useEffect");
-  });
-  //the above will only render the everytine
 
-  const next = () => {
-    firestore
-      .collection("users")
-      .doc()
-      .set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA",
-      })
-      .then(function () {
-        console.log("Document successfully written!");
-        navigation.navigate("WelcomeSpeech");
-      })
-      .catch(function (error) {
-        console.error("Error writing document: ", error);
-      });
-    navigation.navigate("WelcomeSpeech");
-  };
+  // Code for data clearance
+
+  // const clearAll = async () => {
+  //   try {
+  //     await AsyncStorage.clear()
+  //   } catch(e) {
+  //     // clear error
+  //   }
+  
+  //   console.log('Done.')
+  // }
+  // useEffect(() => {
+  //   clearAll();
+  // });
 
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -73,11 +107,11 @@ const WelcomeHello = ({ navigation }) => {
         <Speaker text={textToSpeak}></Speaker>
       </View>
       <View style={styles.textInputContainer}>
-        <TextInput style={styles.textInput} placeholder="Insert Name Here" />
+        <TextInput style={styles.textInput} value={name} onChangeText={ input => setName(input) } placeholder="Insert Name Here" />
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => next()}
+          onPress={() => createUser()}
           style={styles.appButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>
