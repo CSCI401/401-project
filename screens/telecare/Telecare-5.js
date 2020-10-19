@@ -23,7 +23,7 @@ const Telecare5 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
@@ -32,13 +32,19 @@ const Telecare5 = ({ route, navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare6", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Telecare6", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Yes</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Email1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Email1", { readText: route.params.readText })
+          }
           style={styles.NoButtonContainer}
         >
           <Text style={styles.NoButtonText}>No</Text>

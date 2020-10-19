@@ -24,9 +24,9 @@ const Gesture9 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
-  <Text style={styles.text}>{textToSpeak}</Text>
+        <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speakerContainer}>
           <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
         </View>
@@ -40,7 +40,11 @@ const Gesture9 = ({ route, navigation }) => {
 
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture10", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Gesture10", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -78,10 +82,11 @@ const styles = StyleSheet.create({
     //padding: "1%",
   },
   appButtonContainer: {
-    top: "65%",
+    //top: "65%",
+    marginTop: "10%",
     //position: "absolute",
     //padding: "1%",
-    width: "45%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

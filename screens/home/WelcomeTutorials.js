@@ -19,13 +19,17 @@ import {
 const WelcomeTutorials = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>Tutorials{"\n"}</Text>
       </View>
-      <View style={styles.appButtonView}>
+      <View style={styles.telecareButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Telecare1", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Telecare</Text>
@@ -33,7 +37,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.wifiButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Wifi1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Wifi1", { readText: route.params.readText })
+          }
           style={styles.wifiButtonContainer}
         >
           <Text style={styles.wifiButtonText}>Setup my Wifi</Text>
@@ -41,7 +47,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.gestureButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Gesture1", { readText: route.params.readText })
+          }
           style={styles.gestureButtonContainer}
         >
           <Text style={styles.gestureButtonText}>Learn Gestures</Text>
@@ -49,7 +57,9 @@ const WelcomeTutorials = ({ route, navigation }) => {
       </View>
       <View style={styles.emailButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Email1", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Email1", { readText: route.params.readText })
+          }
           style={styles.emailButtonContainer}
         >
           <Text style={styles.emailButtonText}>Emails</Text>
@@ -68,9 +78,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "15%",
+    //flex: 1,
+    position: "relative",
+    //position: "absolute",
+    //marginTop: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -79,17 +90,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 80,
   },
-  appButtonView: {
-    width: "100%",
+  telecareButtonView: {
+    position: "relative",
+    //marginTop: "2%",
+    //width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   appButtonContainer: {
-    top: "50%",
+    //top: "50%",
+    //marginTop: "15%",
     position: "relative",
     width: "75%",
-    height: "30%",
+    //height: "30%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -101,16 +115,18 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   wifiButtonView: {
+    marginTop: "10%",
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   wifiButtonContainer: {
-    top: "0%",
+    // top: "0%",
+    //marginTop: "20%",
     position: "relative",
     width: "75%",
-    height: "30%",
+    //height: "10%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -123,15 +139,16 @@ const styles = StyleSheet.create({
   },
   gestureButtonView: {
     width: "100%",
+    marginTop: "10%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   gestureButtonContainer: {
-    bottom: "50%",
+    //bottom: "50%",
     position: "relative",
     width: "75%",
-    height: "30%",
+    //height: "30%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -143,16 +160,17 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   emailButtonView: {
+    marginTop: "10%",
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   emailButtonContainer: {
-    bottom: "105%",
+    //bottom: "105%",
     position: "relative",
     width: "75%",
-    height: "30%",
+    //height: "30%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",

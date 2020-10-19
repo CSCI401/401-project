@@ -6,11 +6,15 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
+        {/* <Button
           title="Next"
-          onPress={() => this.props.navigation.navigate("Gesture20", {readText: this.props.route.params.readText})}
-        />
-        <Text style={styles.textWrapper}>Practice Zoom in here </Text>
+          onPress={() =>
+            this.props.navigation.navigate("Gesture20", {
+              readText: this.props.route.params.readText,
+            })
+          }
+        /> */}
+        <Text style={styles.textWrapper}>Practice Zoom in here.</Text>
         <View style={styles.zoomWrapper}>
           <ReactNativeZoomableView
             zoomEnabled={true}
@@ -36,16 +40,24 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    // flex: 1,
+    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: 30,
+    position: "relative",
+    //paddingBottom: 30,
   },
   textWrapper: {
     height: 100,
-    fontSize: 30,
-    paddingTop: 30,
+    fontSize: 55,
+    position: "relative",
+    //paddingTop: 30,
+    // text: {
+    marginTop: "5%",
+    marginBottom: "5%",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   zoomWrapper: {
     // flex: 1,
@@ -57,10 +69,11 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   zoomableView: {
+    position: "relative",
     width: 500,
     height: 500,
     // flex: 1,
-    backgroundColor: "#fff",
+    //backgroundColor: "#fff",
   },
   image: {
     // flex: 1,

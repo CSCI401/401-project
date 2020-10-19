@@ -24,7 +24,7 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak1 + textToSpeak2);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak1}</Text>
       </View>
@@ -34,13 +34,31 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
       <View style={styles.container2}>
         <Text style={styles.text2}>{textToSpeak2}</Text>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("WelcomeIntroductoryVideo", {readText: route.params.readText})}
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <View style={styles.backButtonView}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("WelcomeSpeech", {
+                readText: route.params.readText,
+              })
+            }
+            style={styles.backButtonContainer}
+          >
+            <Text style={styles.backButtonText}>Back</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.buttonView}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("WelcomeIntroductoryVideo", {
+                readText: route.params.readText,
+              })
+            }
+            style={styles.YesButtonContainer}
+          >
+            <Text style={styles.YesButtonText}>Next</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <Footer></Footer>
     </SafeAreaView>
@@ -75,24 +93,38 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   text2: {
-    //marginTop: "%",
     textAlign: "center",
     fontSize: 60,
   },
   speaker: {
     position: "relative",
     bottom: "10%",
-    //width: 100,
+  },
+  buttonContainer: {
+    flexDirection: "row",
   },
   buttonView: {
-    width: "100%",
+    width: "50%",
     position: "relative",
+    marginLeft: "-10%",
+  },
+  backButtonView: {
+    width: "50%",
+    marginLeft: "20%",
+    position: "relative",
+  },
+  YesButtonContainer: {
+    width: "50%",
+    marginBottom: "20%",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "black",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
-  YesButtonContainer: {
-    width: "25%",
+  backButtonContainer: {
+    width: "50%",
     marginBottom: "20%",
     borderWidth: 3,
     borderRadius: 20,
@@ -102,6 +134,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   YesButtonText: {
+    fontSize: 60,
+  },
+  backButtonText: {
     fontSize: 60,
   },
 });

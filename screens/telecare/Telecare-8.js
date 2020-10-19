@@ -21,10 +21,10 @@ import {
 const Telecare8 = ({ route, navigation }) => {
   var textToSpeak =
     'Next, you will see a telemedicine consent form.\n\nIf you are willing to have a\ntelephone appointment, scroll to read the form and click "Sign".';
-    AutoReadText(route.params.readText, textToSpeak);
-    return (
+  AutoReadText(route.params.readText, textToSpeak);
+  return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speaker}>
@@ -33,7 +33,11 @@ const Telecare8 = ({ route, navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Telecare9", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Telecare9", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.YesButtonContainer}
         >
           <Text style={styles.YesButtonText}>Next</Text>

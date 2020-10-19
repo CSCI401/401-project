@@ -25,7 +25,7 @@ const Gesture14 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
-      <Header></Header>
+      <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <View style={styles.speakerContainer}>
@@ -41,7 +41,11 @@ const Gesture14 = ({ route, navigation }) => {
       </View>
       <View style={styles.appButtonView}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gesture15", {readText: route.params.readText})}
+          onPress={() =>
+            navigation.navigate("Gesture15", {
+              readText: route.params.readText,
+            })
+          }
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>Next</Text>
@@ -61,9 +65,9 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    flex: 1,
+    //flex: 1,
     position: "relative",
-    bottom: "10%",
+    //bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -76,16 +80,20 @@ const styles = StyleSheet.create({
   },
   appButtonContainer: {
     width: "25%",
-    bottom: "60%",
+    marginTop: "5%",
+    //bottom: "60%",
+    //marginBottom: "15%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
+    position: "relative",
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   speakerContainer: {
-    top: "0%",
+    //top: "0%",
+    bottom: "5%",
     width: "100%",
     position: "relative",
     alignItems: "center",
@@ -104,7 +112,7 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 200,
-    top: "8%",
+    marginTop: "10%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
