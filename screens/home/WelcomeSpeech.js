@@ -21,7 +21,7 @@ import {
 
 const WelcomeSpeech = ({ navigation }) => {
   const [name, setName] = useState("friend");
-  var textToSpeak =`Hi ${name},would you like to be\nread the tutorial?`
+  var textToSpeak =`Hi ${name}, would you like to be\nread the tutorial?`
   const readName = async () => {
     try {
       const value = await AsyncStorage.getItem('name');
