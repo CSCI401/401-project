@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -18,12 +17,32 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-
-var textToSpeak = "Hello Glory,\n\nWelcome to the gesture tutorial!";
+import AsyncStorage from "@react-native-community/async-storage";
+import React, { useEffect, useState } from "react";
 
 const Gesture1 = ({ route, navigation }) => {
   console.log(route);
   AutoReadText(route.params.readText, textToSpeak);
+  const [name, setName] = useState("friend");
+  var textToSpeak =`Hello ${name},\n Welcome to the gesture tutorial!`
+  const readName = async () => {
+    try {
+      const value = await AsyncStorage.getItem('name');
+      if (value!== null) {
+        setName(value);
+      }else{
+        console.log("value is null");
+      }
+    } catch (error) {
+      console.log("error in readName");
+    }
+  };
+  useEffect(() => {
+    readName();
+  });
+
+
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

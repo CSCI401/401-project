@@ -1,6 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-
 import { Component } from "react";
 import Wifi2 from "./wifi-2.js";
 import Header from "../../components/Header";
@@ -8,6 +6,9 @@ import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
 import BottomButton from "../../components/BottomButtons";
+import AsyncStorage from "@react-native-community/async-storage";
+import React, { useEffect, useState } from "react";
+import { firestore } from "../../config/firebase";
 
 import {
   StyleSheet,
@@ -23,8 +24,48 @@ import {
 } from "react-native";
 
 const Wifi1 = ({ route, navigation }) => {
-  var textToSpeak = "Hello, Glory. \n Welcome to the wifi tutorial!";
   AutoReadText(route.params.readText, textToSpeak);
+
+  const [name, setName] = useState("friend");
+  const [id, setID] = useState("x");
+  var textToSpeak = `Hello ${name}, would you like to be\nread the tutorial?`;
+
+  const prepare = async () => {
+    try {
+      const getName = await AsyncStorage.getItem("name");
+      const getID = await AsyncStorage.getItem("id");
+      if (getName != null && getID != null) {
+        setName(getName);
+        setID(getID);
+      }
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+
+  useEffect(() => {
+    prepare();
+    var number = 0;
+    var docRef = firestore.collection("ScreenVisits").doc(id);
+    docRef
+      .get()
+      .then(function (doc) {
+        if (doc.exists) {
+          const data = doc.data();
+          number = data.wifi1;
+          console.log("line 57 number is ", number);
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch(function (error) {
+        console.log("Error getting document:", error);
+      });
+
+    //need to figure out why it's not updating firestore
+    var setWithMerge = docRef.set({ wifi1: number + 1 }, { merge: true });
+  });
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

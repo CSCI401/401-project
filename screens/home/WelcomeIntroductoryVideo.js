@@ -19,6 +19,8 @@ import {
   ImageBackground,
 } from "react-native";
 
+import AsyncStorage from "@react-native-community/async-storage";
+
 const WelcomeIntroductoryVideo = ({ route, navigation }) => {
   var textToSpeak = "Let's explain this app.\n";
   AutoReadText(route.params.readText, textToSpeak);
