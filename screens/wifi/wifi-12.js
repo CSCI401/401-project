@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     bottom: "25%"
-  },
+  },  
   buttonView: {
     top: "15%",
     width: "100%",
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    width: "20%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -106,10 +106,10 @@ const styles = StyleSheet.create({
     margin: "2%",
   },
   YesButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
   NoButtonContainer: {
-    width: "20%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -117,8 +117,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
 });

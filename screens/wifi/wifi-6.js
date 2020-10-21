@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
     fontSize: 60,

@@ -1,9 +1,6 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Wifi10 from "./wifi-10.js";
 import Speaker from "../../components/Speaker";
 
 import {
@@ -12,11 +9,7 @@ import {
   View,
   SafeAreaView,
   Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
 
@@ -125,6 +118,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
     fontSize: 60,

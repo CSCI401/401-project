@@ -13,7 +13,7 @@ import Speaker from "../../components/Speaker";
 
 const Wifi14 = ({ route, navigation }) => {
   const textToSpeak =
-    "You might have select the wrong wifi or entered a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
+    "You might have selected the wrong wifi or entered a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    width: "40%",
+    width: "35%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -97,6 +97,6 @@ const styles = StyleSheet.create({
     margin: "2%",
   },
   YesButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
 });

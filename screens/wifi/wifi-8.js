@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -110,7 +109,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -119,6 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
     fontSize: 60,

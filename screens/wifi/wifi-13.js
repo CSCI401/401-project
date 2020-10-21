@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    width: "40%",
+    width: "35%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -115,6 +115,6 @@ const styles = StyleSheet.create({
     margin: "2%",
   },
   YesButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
 });
