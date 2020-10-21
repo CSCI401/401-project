@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 import {
   StyleSheet,
   Text,
@@ -27,30 +28,12 @@ const Gesture19 = ({ route, navigation }) => {
       <View style={styles.zoomPracticeContainer}>
         <ZoomInPractice navigation={navigation} route={route}></ZoomInPractice>
       </View>
-      <View style={styles.appButtonView}>
-        <TouchableOpacity
-          // onPress={() =>
-          //   this.props.navigation.navigate("Gesture17", {
-          //     readText: this.props.route.params.readText,
-          //   })
-          // }
-          onPress={() =>
-            navigation.navigate("Gesture20", {
-              readText: route.params.readText,
-            })
-          }
-          // navigation.navigate("Gesture16", {
-          //   readText: route.params.readText,
-          // })
-          // onPress={() =>
-          // this.props.navigation.navigate("Gesture17", {
-          //   readText: this.props.route.params.readText,
-          // })
-          style={styles.appButtonContainer}
-        >
-          <Text style={styles.appButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Gesture20"}
+        back={"Gesture18"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </View>
   );

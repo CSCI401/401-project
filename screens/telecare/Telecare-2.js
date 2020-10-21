@@ -32,19 +32,13 @@ const Telecare2 = ({ route, navigation }) => {
           <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
         </View>
       </View>
+      <BottomButton
+        next={"Telecare3"}
+        back={"Telecare1"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       {/* <Speaker text={textToSpeak}></Speaker> */}
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Telecare3", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
       <Footer></Footer>
     </SafeAreaView>
   );

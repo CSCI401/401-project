@@ -17,6 +17,7 @@ import {
   ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 const Wifi11 = ({ route, navigation }) => {
   const textToSpeak =
@@ -28,16 +29,12 @@ const Wifi11 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Wifi12", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Wifi12"}
+        back={"Wifi6"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );

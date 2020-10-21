@@ -18,6 +18,7 @@ import {
 } from "react-native";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 const Wifi3 = ({ route, navigation }) => {
   var textToSpeak = "You should be able to see this page.";
@@ -35,16 +36,12 @@ const Wifi3 = ({ route, navigation }) => {
           <Speaker text={textToSpeak}></Speaker>
         </View>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Wifi4", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Wifi4"}
+        back={"Wifi2"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
