@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 import {
   StyleSheet,
@@ -33,16 +34,12 @@ const Wifi1 = ({ route, navigation }) => {
       <View style={styles.speaker}>
         <Speaker text={textToSpeak}></Speaker>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Wifi2", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Wifi2"}
+        back={"WelcomeTutorials"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );

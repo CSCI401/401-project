@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 import {
   StyleSheet,
   Text,
@@ -23,42 +24,19 @@ const Gesture16 = ({ route, navigation }) => {
   return (
     <View>
       <Header navigation={navigation}></Header>
-      <View style={styles.container}>
-        {/* <Text style={styles.text}>{textToSpeak}</Text> */}
-      </View>
-      {/* <View style={styles.speaker}>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-      </View> */}
+      <View style={styles.container}></View>
       <View style={styles.zoomPracticeContainer}>
         <ZoomOutPractice
           navigation={navigation}
           route={route}
         ></ZoomOutPractice>
       </View>
-      <View style={styles.appButtonView}>
-        <TouchableOpacity
-          // onPress={() =>
-          //   this.props.navigation.navigate("Gesture17", {
-          //     readText: this.props.route.params.readText,
-          //   })
-          // }
-          onPress={() =>
-            navigation.navigate("Gesture17", {
-              readText: route.params.readText,
-            })
-          }
-          // navigation.navigate("Gesture16", {
-          //   readText: route.params.readText,
-          // })
-          // onPress={() =>
-          // this.props.navigation.navigate("Gesture17", {
-          //   readText: this.props.route.params.readText,
-          // })
-          style={styles.appButtonContainer}
-        >
-          <Text style={styles.appButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Gesture17"}
+        back={"Gesture15"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </View>
   );

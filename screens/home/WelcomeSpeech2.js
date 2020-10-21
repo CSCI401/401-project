@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import BottomButton from "../../components/BottomButtons";
 import AutoReadText from "../../components/AutoReadText";
 
 import {
@@ -34,32 +35,12 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
       <View style={styles.container2}>
         <Text style={styles.text2}>{textToSpeak2}</Text>
       </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.backButtonView}>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("WelcomeSpeech", {
-                readText: route.params.readText,
-              })
-            }
-            style={styles.backButtonContainer}
-          >
-            <Text style={styles.backButtonText}>Back</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonView}>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("WelcomeIntroductoryVideo", {
-                readText: route.params.readText,
-              })
-            }
-            style={styles.YesButtonContainer}
-          >
-            <Text style={styles.YesButtonText}>Next</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <BottomButton
+        next={"WelcomeIntroductoryVideo"}
+        back={"WelcomeSpeech"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -99,45 +80,6 @@ const styles = StyleSheet.create({
   speaker: {
     position: "relative",
     bottom: "10%",
-  },
-  buttonContainer: {
-    flexDirection: "row",
-  },
-  buttonView: {
-    width: "50%",
-    position: "relative",
-    marginLeft: "-10%",
-  },
-  backButtonView: {
-    width: "50%",
-    marginLeft: "20%",
-    position: "relative",
-  },
-  YesButtonContainer: {
-    width: "50%",
-    marginBottom: "20%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  backButtonContainer: {
-    width: "50%",
-    marginBottom: "20%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonText: {
-    fontSize: 60,
-  },
-  backButtonText: {
-    fontSize: 60,
   },
 });
 
