@@ -19,6 +19,7 @@ import {
 import Wifi3 from "./wifi-3.js";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 const Wifi2 = ({ route, navigation }) => {
   var textToSpeak = "First, you need to \n swipe down from the top.";
@@ -37,17 +38,12 @@ const Wifi2 = ({ route, navigation }) => {
         </View>
       </View>
 
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Wifi3", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
-
+      <BottomButton
+        next={"Wifi3"}
+        back={"Wifi2"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    bottom: "30%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",

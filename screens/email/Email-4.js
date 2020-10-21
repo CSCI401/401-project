@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 import {
   StyleSheet,
   Text,
@@ -46,16 +47,12 @@ const Email4 = ({ route, navigation }) => {
           </View>
         </View>
       </View>
-      <View style={styles.appButtonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Email5", { readText: route.params.readText })
-          }
-          style={styles.appButtonContainer}
-        >
-          <Text style={styles.appButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Email5"}
+        back={"Email3"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
