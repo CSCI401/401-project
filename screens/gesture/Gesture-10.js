@@ -32,10 +32,6 @@ const Gesture10 = ({ route, navigation }) => {
       <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      {/* <Button
-        title="Go to next gesture"
-        onPress={() => navigation.navigate("Gesture11")}
-      /> */}
       <BottomButton
         next={"Gesture11"}
         back={"Gesture9"}
@@ -57,8 +53,6 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -68,9 +62,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "flex-end",
     fontSize: 60,
-  },
-  appButtonText: {
-    fontSize: 80,
   },
   textButton: {
     flexDirection: "row",
@@ -82,32 +73,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     textAlign: "center",
   },
-  appButtonView: {
-    marginTop: "80%",
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    // top: "125%",
-    //position: "absolute",
-    //padding: "1%",
-    width: "25%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
-    fontSize: 60,
-  },
   speaker: {
     position: "relative",
-    top: "40%",
-    //bottom: "10%",
-    //width: 100,
+    bottom: "8%",
   },
 });

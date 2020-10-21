@@ -28,17 +28,15 @@ const Gesture9 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speakerContainer}>
-          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-        </View>
       </View>
-
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      </View>
       <Image
         style={styles.image}
         source={require("../../assets/tabscreenshot.png")}
         resizeMode="stretch"
       />
-
       <BottomButton
         next={"Gesture10"}
         back={"Gesture8"}
@@ -59,9 +57,8 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    //flex: 1,
     position: "relative",
-    //top: "0%",
+    top: "1%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -72,47 +69,19 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     fontSize: 60,
   },
-  appButtonText: {
-    fontSize: 80,
-    //padding: "1%",
-  },
-  appButtonContainer: {
-    //top: "65%",
-    marginTop: "10%",
-    //position: "absolute",
-    //padding: "1%",
-    width: "25%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   speakerContainer: {
-    width: "100%",
     position: "relative",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    // justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
-    fontSize: 60,
+    marginBottom: "2%",
+    marginTop: "2%",
   },
   image: {
-    // flex: 1,
     width: "50%",
     height: "50%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
     left: "23%",
-    top: "6%",
-    // left: 150,
+    top: "4%",
+    marginBottom: "6%",
   },
 });
