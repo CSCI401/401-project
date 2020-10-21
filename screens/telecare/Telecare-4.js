@@ -28,14 +28,14 @@ const Telecare4 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speaker}>
-        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-      </View>
       <View style={styles.image1}>
         <Image
           style={styles.image2}
           source={require("../../assets/kecktextwaiting.png")}
         />
+      </View>
+      <View style={styles.speaker}>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
       <BottomButton
         next={"Telecare5"}
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    bottom: "0%",
+    bottom: "20%",
     width: 500,
     height: 400,
     resizeMode: "contain",
