@@ -1,20 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Wifi9 from "./wifi-9.js";
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
   Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
@@ -32,9 +25,6 @@ const Wifi8 = ({ route, navigation }) => {
           style={styles.image}
           source={require("../../assets/router.jpg")}
         />
-        <View style={styles.speaker}>
-          <Speaker text={textToSpeak}></Speaker>
-        </View>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -54,6 +44,9 @@ const Wifi8 = ({ route, navigation }) => {
           <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -68,16 +61,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    width: "70%",
+    width: "100%",
     flex: 1,
     bottom: "10%",
-    left: "10%",
-    right: "10%",
+    paddingHorizontal: "4%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-
   image: {
     alignItems: "center",
     position: "absolute",
@@ -86,16 +77,15 @@ const styles = StyleSheet.create({
     width: 500,
     height: 300,
   },
-
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
-    position: "relative",
-    bottom: "5%",
+    bottom: "27%"
   },
   buttonView: {
+    top: "15%",
     width: "100%",
     flex: 1,
     position: "relative",

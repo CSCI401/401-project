@@ -1,24 +1,16 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Wifi11 from "./wifi-11.js";
-import WelcomeTutorials from "../home/WelcomeTutorials.js";
 
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
-  Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
+import Speaker from "../../components/Speaker";
 
 const Wifi10 = ({ route, navigation }) => {
   const textToSpeak =
@@ -39,16 +31,18 @@ const Wifi10 = ({ route, navigation }) => {
           }
           style={styles.YesButtonContainer}
         >
-          <Text style={styles.YesButtonText}>Go back to home page</Text>
+          <Text style={styles.YesButtonText}>Home</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi10;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -56,12 +50,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    top: "5%",
-    width: "70%",
+    width: "100%",
     flex: 1,
-    bottom: "10%",
-    left: "10%",
-
+    paddingHorizontal: "4%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -74,14 +65,13 @@ const styles = StyleSheet.create({
     width: 500,
     height: 300,
   },
-
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
     position: "relative",
-    bottom: "5%",
+    bottom: "27%",
   },
   buttonView: {
     width: "100%",
@@ -92,9 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: "2%",
+    top: "15%",
   },
   YesButtonContainer: {
-    //top: "25%",
     width: "40%",
     borderWidth: 3,
     borderRadius: 20,

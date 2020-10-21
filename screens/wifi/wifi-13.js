@@ -1,23 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import WelcomeTutorials from "../home/WelcomeTutorials.js";
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
   Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
 import AsyncStorage from "@react-native-community/async-storage";
 import React, { useEffect, useState } from "react";
+import Speaker from "../../components/Speaker";
 
 const Wifi13 = ({ route, navigation }) => {
    AutoReadText(route.params.readText, textToSpeak);
@@ -46,7 +40,7 @@ const Wifi13 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
-          style={styles.image1}
+          style={styles.image}
           source={require("../../assets/wifi_ok.jpg")}
         />
       </View>
@@ -62,32 +56,31 @@ const Wifi13 = ({ route, navigation }) => {
           <Text style={styles.YesButtonText}>Home</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi13;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     position: "relative",
   },
   container: {
-    flexDirection: "row",
-    width: "90%",
-    left: "4%",
+    width: "100%",
+    top: "10%",
     flex: 1,
-    bottom: "10%",
-    justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-  image1: {
+  image: {
     alignItems: "center",
     position: "absolute",
-    top: "80%",
+    top: "40%",
     left: "21%",
     width: 300,
     height: 260,
@@ -98,9 +91,10 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "5%",
+    bottom: "27%",
   },
   buttonView: {
+    top: "15%",
     width: "100%",
     flex: 1,
     position: "relative",
@@ -111,7 +105,6 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
     width: "40%",
     borderWidth: 3,
     borderRadius: 20,

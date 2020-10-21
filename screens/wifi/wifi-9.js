@@ -4,6 +4,8 @@ import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Wifi10 from "./wifi-10.js";
+import Speaker from "../../components/Speaker";
+
 import {
   StyleSheet,
   Text,
@@ -50,13 +52,15 @@ const Wifi9 = ({ route, navigation }) => {
           <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi9;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -64,32 +68,28 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    width: "70%",
+    width: "100%",
     flex: 1,
     bottom: "10%",
-    left: "10%",
-
+    paddingHorizontal: "4%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-
   image: {
     alignItems: "center",
     position: "absolute",
-    top: "80%",
+    top: "65%",
     margin: "10%",
     width: 500,
     height: 300,
   },
-
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
-    position: "relative",
-    bottom: "5%",
+    bottom: "25%"
   },
   buttonView: {
     width: "100%",

@@ -30,8 +30,8 @@ const Telecare2 = ({ route, navigation }) => {
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
       <View style={styles.speaker}>
-          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-        </View>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
+      </View>
       <BottomButton
         next={"Telecare3"}
         back={"Telecare1"}
