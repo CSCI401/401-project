@@ -28,10 +28,10 @@ const Telecare8 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speaker}>
+      </View>
+      <View style={styles.speaker}>
           <Speaker text={textToSpeak}></Speaker>
         </View>
-      </View>
       <BottomButton
         next={"Telecare9"}
         back={"Telecare7"}
@@ -52,8 +52,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -123,8 +121,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "1%",
-    right: "65%",
+    bottom: "8%",
   },
 });
 
