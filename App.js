@@ -75,7 +75,8 @@ const Stack = createStackNavigator();
 export default function App() {
   //return <WelcomeHello />;
   //return <WelcomeSpeech2 />;
-
+  //ignore the error
+  console.ignoredYellowBox = ['Setting a timer'];
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="WelcomeHello">

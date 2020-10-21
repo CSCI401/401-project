@@ -21,7 +21,7 @@ import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
 
 const Wifi2 = ({ route, navigation }) => {
-  var textToSpeak = "First Glory,\n you need to swipe down \nfrom the top.";
+  var textToSpeak = "First, you need to \n swipe down from the top.";
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
