@@ -24,13 +24,13 @@ const Gesture1 = ({ route, navigation }) => {
   console.log(route);
   AutoReadText(route.params.readText, textToSpeak);
   const [name, setName] = useState("friend");
-  var textToSpeak =`Hello ${name},\n Welcome to the gesture tutorial!`
+  var textToSpeak = `Hello ${name},\n Welcome to the gesture tutorial!`;
   const readName = async () => {
     try {
-      const value = await AsyncStorage.getItem('name');
-      if (value!== null) {
+      const value = await AsyncStorage.getItem("name");
+      if (value !== null) {
         setName(value);
-      }else{
+      } else {
         console.log("value is null");
       }
     } catch (error) {
@@ -40,8 +40,6 @@ const Gesture1 = ({ route, navigation }) => {
   useEffect(() => {
     readName();
   });
-
-
 
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -84,8 +82,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
-    //width: 100,
+    bottom: "9%",
   },
   buttonView: {
     width: "100%",

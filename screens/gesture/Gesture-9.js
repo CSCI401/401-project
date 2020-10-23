@@ -28,15 +28,15 @@ const Gesture9 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
+        <Image
+          style={styles.image}
+          source={require("../../assets/tabscreenshot.png")}
+          resizeMode="stretch"
+        />
       </View>
-      <View style={styles.speakerContainer}>
+      <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <Image
-        style={styles.image}
-        source={require("../../assets/tabscreenshot.png")}
-        resizeMode="stretch"
-      />
       <BottomButton
         next={"Gesture10"}
         back={"Gesture8"}
@@ -56,32 +56,28 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
+    //flexDirection: "row",
     width: "100%",
-    position: "relative",
-    top: "1%",
+    flex: 1,
+    bottom: "5%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
     fontSize: 60,
   },
-  speakerContainer: {
+  speaker: {
     position: "relative",
-    marginBottom: "2%",
-    marginTop: "2%",
+    bottom: "9%",
   },
   image: {
-    width: "50%",
+    width: "40%",
     height: "50%",
+    marginTop: "5%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
-    left: "23%",
-    top: "4%",
-    marginBottom: "6%",
   },
 });

@@ -18,14 +18,14 @@ const Gesture12 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speakerContainer}>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-      </View>
       <Image
         style={styles.image}
         source={require("../../assets/firescreenshot.png")}
         resizeMode="stretch"
       />
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      </View>
       <BottomButton
         next={"Gesture13"}
         back={"Gesture11"}
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    position: "relative",
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -55,37 +55,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    fontSize: 55,
-  },
-  speakerContainer: {
-    marginBottom: "5%",
-    position: "relative",
-  },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "relative",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    textAlign: "center",
-    paddingRight: 200,
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
+    fontSize: 50,
+    marginTop: "10%",
   },
   image: {
-    // flex: 1,
-    width: "50%",
-    height: "50%",
+    width: "47%",
+    height: "47%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
-    left: "25%",
-    top: "5%",
-    marginBottom: "7%",
+    left: "28%",
+    top: "0%",
+  },
+  speakerContainer: {
+    position: "relative",
+    marginBottom: "10%",
   },
 });

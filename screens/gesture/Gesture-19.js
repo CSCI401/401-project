@@ -19,14 +19,18 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-
+var textToSpeak = "Practice Zoom in here.";
 const Gesture19 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <View>
       <Header navigation={navigation}></Header>
-      {/* <View style={styles.container}></View> */}
+      <View style={styles.container}></View>
       <View style={styles.zoomPracticeContainer}>
         <ZoomInPractice navigation={navigation} route={route}></ZoomInPractice>
+      </View>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <BottomButton
         next={"Gesture20"}
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "15%",
+    //bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -76,11 +80,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-    bottom: "15%",
-    //width: 100,
+    bottom: "9%",
   },
   appButtonView: {
     width: "100%",
@@ -98,5 +98,6 @@ const styles = StyleSheet.create({
   },
   zoomPracticeContainer: {
     position: "relative",
+    marginBottom: "17%",
   },
 });

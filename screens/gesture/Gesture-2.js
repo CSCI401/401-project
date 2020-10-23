@@ -64,8 +64,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "20%",
-    //width: 100,
+    bottom: "9%",
   },
   buttonView: {
     width: "100%",

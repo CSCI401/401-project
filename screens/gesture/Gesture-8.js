@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
+    bottom: "9%",
   },
   backimage: {
     width: "100%",

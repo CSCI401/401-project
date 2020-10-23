@@ -29,9 +29,7 @@ const Gesture14 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speakerContainer}>
-          <Speaker text={textToSpeak}></Speaker>
-        </View>
+
         <Image
           style={styles.image}
           source={{
@@ -39,6 +37,9 @@ const Gesture14 = ({ route, navigation }) => {
               "https://cdn.gadgetguideonline.com/s10/wp-content/uploads/sites/10/2019/03/galaxy_s10_touchscreen_gestures_6_pinch.gif",
           }}
         />
+        <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       </View>
       <BottomButton
         next={"Gesture15"}
@@ -59,10 +60,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
+    //flexDirection: "row",
     width: "100%",
-    //flex: 1,
-    position: "relative",
-    //bottom: "10%",
+    flex: 1,
+    //bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -73,26 +74,9 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     fontSize: 60,
   },
-  appButtonContainer: {
-    width: "25%",
-    marginTop: "5%",
-    //bottom: "60%",
-    //marginBottom: "15%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
+  speaker: {
     position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  speakerContainer: {
-    //top: "0%",
-    bottom: "5%",
-    width: "100%",
-    position: "relative",
-    alignItems: "center",
-    textAlign: "center",
+    bottom: "9%",
   },
   appButtonView: {
     width: "100%",
@@ -101,15 +85,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  appButtonText: {
-    fontSize: 60,
-  },
   image: {
     width: 300,
     height: 200,
-    marginTop: "10%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: "13%",
   },
 });

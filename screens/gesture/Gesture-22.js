@@ -37,6 +37,7 @@ const Gesture22 = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   scrollView: {
     marginHorizontal: 20,
+    marginTop: "5%",
   },
   container: {
     flex: 1,

@@ -81,11 +81,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-    bottom: "15%",
-    //width: 100,
+    bottom: "9%",
   },
   appButtonView: {
     width: "100%",

@@ -19,8 +19,9 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-
+var textToSpeak = "Practice Zoom out here.";
 const Gesture16 = ({ route, navigation }) => {
+  AutoReadText(route.params.readText, textToSpeak);
   return (
     <View>
       <Header navigation={navigation}></Header>
@@ -30,6 +31,9 @@ const Gesture16 = ({ route, navigation }) => {
           navigation={navigation}
           route={route}
         ></ZoomOutPractice>
+      </View>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <BottomButton
         next={"Gesture17"}
@@ -53,7 +57,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "15%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -64,43 +67,15 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     fontSize: 60,
   },
-  appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    width: "25%",
-    marginBottom: "13%",
-    marginTop: "13%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   speaker: {
     position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-    bottom: "15%",
-    //width: 100,
-  },
-  appButtonView: {
-    width: "100%",
-    position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
-    //marginTop: "15%",
-    fontSize: 60,
+    bottom: "9%",
   },
   appButtonText: {
     fontSize: 60,
   },
   zoomPracticeContainer: {
     position: "relative",
+    marginBottom: "17%",
   },
 });

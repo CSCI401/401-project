@@ -16,14 +16,14 @@ const Gesture11 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speakerContainer}>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-      </View>
       <Image
         style={styles.image}
         source={require("../../assets/firescreenshot.png")}
         resizeMode="stretch"
       />
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      </View>
       <BottomButton
         next={"Gesture12"}
         back={"Gesture10"}
@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
   },
   speakerContainer: {
     position: "relative",
-    marginBottom: "10%",
+    marginBottom: "8%",
   },
 });

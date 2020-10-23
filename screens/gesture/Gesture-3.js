@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    top: "5%",
+    bottom: "9%",
   },
   imageContainer: {
     width: "100%",

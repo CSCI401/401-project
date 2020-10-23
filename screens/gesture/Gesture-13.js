@@ -29,8 +29,8 @@ const Gesture13 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speakerContainer}>
-        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
       </View>
       <BottomButton
         next={"Gesture14"}
@@ -48,31 +48,34 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     position: "relative",
-    width: "100%",
   },
   container: {
+    flexDirection: "row",
     width: "100%",
-    //flex: 1,
-    position: "relative",
-    top: "10%",
+    flex: 1,
+    //bottom: "5%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
     fontSize: 60,
   },
-  appButtonText: {
-    fontSize: 80,
+  speaker: {
+    position: "relative",
+    bottom: "9%",
   },
-  appButtonContainer: {
-    //top: "65%",
-    //position: "absolute",
-    //padding: "1%",
+  buttonView: {
+    width: "100%",
+    position: "relative",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  YesButtonContainer: {
     width: "25%",
+    marginBottom: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -80,21 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  speakerContainer: {
-    width: "100%",
-    position: "relative",
-    alignItems: "center",
-    textAlign: "center",
-    marginTop: "30%",
-  },
-  appButtonView: {
-    marginTop: "15%",
-    width: "100%",
-    textAlign: "center",
-    // justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
+  YesButtonText: {
     fontSize: 60,
   },
 });

@@ -30,10 +30,6 @@ const Gesture17 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-
-        <View style={styles.speaker}>
-          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-        </View>
         <Image
           style={styles.image}
           source={{
@@ -41,6 +37,9 @@ const Gesture17 = ({ route, navigation }) => {
               "https://cdn.gadgetguideonline.com/s10/wp-content/uploads/sites/10/2019/03/galaxy_s10_touchscreen_gestures_7_spread.gif",
           }}
         />
+      </View>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <BottomButton
         next={"Gesture18"}
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "relative",
-    bottom: "10%",
+    marginBottom: "13%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -74,55 +73,16 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "flex-end",
     fontSize: 55,
-    marginTop: "45%",
+    //marginTop: "45%",
   },
   speaker: {
-    marginTop: "3%",
-    //bottom: "5%",
-    width: "100%",
     position: "relative",
-    alignItems: "center",
-    textAlign: "center",
-    //width: 100,
-  },
-  appButtonText: {
-    fontSize: 80,
-  },
-  appButtonContainer: {
-    width: "25%",
-    marginBottom: "25%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textButton: {
-    flexDirection: "row",
-    width: "100%",
-    flex: 1,
-    position: "absolute",
-    top: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  appButtonView: {
-    top: "10%",
-    width: "100%",
-    position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonText: {
-    fontSize: 60,
+    bottom: "9%",
   },
   image: {
     width: 300,
     height: 200,
-    marginTop: "15%",
+    //marginTop: "15%",
     position: "relative",
     justifyContent: "center",
     alignItems: "center",

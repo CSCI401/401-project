@@ -29,9 +29,9 @@ const Gesture15 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speakerContainer}>
-          <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
-        </View>
+      </View>
+      <View style={styles.speakerContainer}>
+        <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
       <BottomButton
         next={"Gesture19"}
@@ -55,13 +55,13 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     position: "relative",
-    bottom: "10%",
+    //bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
-    marginTop: "15%",
+    //marginTop: "15%",
     textAlign: "center",
     justifyContent: "flex-end",
     alignItems: "flex-end",
@@ -70,22 +70,12 @@ const styles = StyleSheet.create({
   appButtonText: {
     fontSize: 80,
   },
-  appButtonContainer: {
-    width: "25%",
-    marginBottom: "25%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   speakerContainer: {
-    marginTop: "15%",
     width: "100%",
     position: "relative",
     alignItems: "center",
     textAlign: "center",
+    bottom: "9%",
   },
   appButtonView: {
     width: "100%",
