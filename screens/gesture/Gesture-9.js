@@ -55,7 +55,7 @@ const Gesture9 = ({ route, navigation }) => {
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
-          source={require("../../assets/tabscreenshot.png")}
+          source={require("../../assets/squareButtonScreenshot.png")}
           resizeMode="stretch"
         />
       </View>

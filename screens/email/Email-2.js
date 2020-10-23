@@ -61,7 +61,7 @@ const Email2 = ({ route, navigation }) => {
           <View style={styles.imageContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/firescreenshot.png")}
+              source={require("../../assets/homeButtonScreenshot.png")}
               resizeMode="stretch"
             />
           </View>

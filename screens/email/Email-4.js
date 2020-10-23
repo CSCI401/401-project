@@ -63,7 +63,7 @@ const Email4 = ({ route, navigation }) => {
           <View style={styles.imageContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/appsScreenshot.png")}
+              source={require("../../assets/emailAppScreenshot.png")}
               resizeMode="stretch"
             />
           </View>
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "relative",
     top: "0%",
-    width: "80%",
+    width: "70%",
     height: "90%",
   },
   appButtonView: {

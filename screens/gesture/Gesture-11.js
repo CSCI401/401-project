@@ -43,7 +43,7 @@ const Gesture11 = ({ route, navigation }) => {
       </View>
       <Image
         style={styles.image}
-        source={require("../../assets/firescreenshot.png")}
+        source={require("../../assets/appIconScreenshot.png")}
         resizeMode="stretch"
       />
       <View style={styles.speakerContainer}>
