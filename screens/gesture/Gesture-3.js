@@ -39,7 +39,7 @@ const Gesture3 = ({ route, navigation }) => {
           <View style={styles.imageContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/firescreenshot.png")}
+              source={require("../../assets/volumePowerButtonsScreenshot.png")}
               resizeMode="stretch"
             />
           </View>
