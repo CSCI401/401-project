@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 import {
   StyleSheet,
@@ -27,23 +28,16 @@ const Telecare6 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speaker}>
-          <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-        </View>
       </View>
-      {/* <Speaker text={textToSpeak}></Speaker> */}
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Telecare7", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.speaker}>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
+      <BottomButton
+        next={"Telecare7"}
+        back={"Telecare5"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -58,8 +52,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    position: "absolute",
-    top: "20%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -128,9 +120,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "1%",
-    right: "80%",
-    //width: 100,
+    bottom: "9%",
   },
 });
 

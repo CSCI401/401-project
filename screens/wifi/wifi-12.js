@@ -1,23 +1,17 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Wifi13 from "./wifi-13.js";
-import Wifi14 from "./wifi-14.js";
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
   Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
+import Speaker from "../../components/Speaker";
+
 
 const Wifi12 = ({ route, navigation }) => {
   const textToSpeak =
@@ -29,7 +23,7 @@ const Wifi12 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
-          style={styles.image1}
+          style={styles.image}
           source={require("../../assets/wifi_success.png")}
         />
       </View>
@@ -51,13 +45,15 @@ const Wifi12 = ({ route, navigation }) => {
           <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi12;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -65,32 +61,31 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    width: "90%",
-    left: "4%",
+    width: "100%",
     flex: 1,
     bottom: "10%",
+    paddingHorizontal: "4%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-
-  image1: {
+  image: {
     alignItems: "center",
     position: "absolute",
     top: "80%",
-    left: "10%",
+    left: "15%",
     width: 400,
-    height: 300,
+    height: 280,
   },
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
-    position: "relative",
-    bottom: "5%",
-  },
+    bottom: "25%"
+  },  
   buttonView: {
+    top: "15%",
     width: "100%",
     flex: 1,
     position: "relative",
@@ -101,8 +96,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    top: "15%",
-    width: "20%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -112,11 +106,10 @@ const styles = StyleSheet.create({
     margin: "2%",
   },
   YesButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
   NoButtonContainer: {
-    top: "15%",
-    width: "20%",
+    width: "25%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -124,8 +117,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
 });

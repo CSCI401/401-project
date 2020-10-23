@@ -27,9 +27,6 @@ const Telecare5 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speaker}>
-        <Speaker text={textToSpeak}></Speaker>
-      </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
           onPress={() =>
@@ -49,6 +46,9 @@ const Telecare5 = ({ route, navigation }) => {
         >
           <Text style={styles.NoButtonText}>No</Text>
         </TouchableOpacity>
+      </View>
+      <View style={styles.speaker}>
+        <Speaker text={textToSpeak}></Speaker>
       </View>
       <Footer></Footer>
     </SafeAreaView>
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   speaker: {
-    position: "relative",
-    bottom: "5%",
+    bottom: "25%",
   },
   buttonView: {
+    top: "15%",
     width: "100%",
     flex: 1,
     position: "relative",
@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -102,7 +101,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -111,6 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: "2%",
+    marginLeft: "10%",
   },
   NoButtonText: {
     fontSize: 60,

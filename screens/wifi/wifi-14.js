@@ -1,26 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import WelcomeTutorials from "../home/WelcomeTutorials.js";
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
-  Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
+import Speaker from "../../components/Speaker";
 
 const Wifi14 = ({ route, navigation }) => {
   const textToSpeak =
-    "You might have select the wrong wifi or enterd a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
+    "You might have selected the wrong wifi or entered a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
   AutoReadText(route.params.readText, textToSpeak);
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -37,16 +30,18 @@ const Wifi14 = ({ route, navigation }) => {
           }
           style={styles.YesButtonContainer}
         >
-          <Text style={styles.YesButtonText}>Go back to home page</Text>
+          <Text style={styles.YesButtonText}>Home</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.speaker}>
+          <Speaker text={textToSpeak}></Speaker>
+        </View>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi14;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
@@ -78,9 +73,10 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "5%",
+    bottom: "27%",
   },
   buttonView: {
+    top: "15%",
     width: "100%",
     flex: 1,
     position: "relative",
@@ -91,8 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
-    width: "40%",
+    width: "35%",
     borderWidth: 3,
     borderRadius: 20,
     borderColor: "black",
@@ -102,6 +97,6 @@ const styles = StyleSheet.create({
     margin: "2%",
   },
   YesButtonText: {
-    fontSize: 40,
+    fontSize: 60,
   },
 });

@@ -19,6 +19,7 @@ import {
 
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 const Wifi7 = ({ route, navigation }) => {
   var textToSpeak =
@@ -29,45 +30,35 @@ const Wifi7 = ({ route, navigation }) => {
       <Header navigation={navigation}></Header>
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
-        <View style={styles.speaker}>
+      </View>
+      <View style={styles.speaker}>
           <Speaker text={textToSpeak}></Speaker>
         </View>
-      </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Wifi8", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Wifi8"}
+        back={"Wifi6"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
 };
 
 export default Wifi7;
-// <Image source={require("./speaker.png")} />
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     position: "relative",
   },
   container: {
-    flexDirection: "row",
-    width: "70%",
+    width: "100%",
+    top: "10%",
     flex: 1,
-    top: "20%",
-    bottom: "10%",
-    left: "10%",
-    right: "10%",
-    justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    paddingHorizontal: "2%",
   },
-
   image1: {
     alignItems: "center",
     position: "absolute",
@@ -89,7 +80,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "5%",
+    bottom: "10%",
   },
   buttonView: {
     width: "100%",
@@ -102,7 +93,6 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
   },
   YesButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,
@@ -116,7 +106,6 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   NoButtonContainer: {
-    //top: "25%",
     width: "25%",
     borderWidth: 3,
     borderRadius: 20,

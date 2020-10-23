@@ -1,10 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
+import AsyncStorage from "@react-native-community/async-storage";
+
 import {
   StyleSheet,
   Text,
@@ -23,6 +26,10 @@ var textToSpeak = "Hello Glory,\n\nWelcome to the email tutorial!";
 const Gesture1 = ({ route, navigation }) => {
   console.log(route);
   AutoReadText(route.params.readText, textToSpeak);
+  const [name, setName] = useState("friend");
+  const [id, setID] = useState("x");
+  var textToSpeak = `Hello ${name}, \n Welcome to the email tutorial!`;
+  //need to add code here ot getname and get id
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>
@@ -32,16 +39,12 @@ const Gesture1 = ({ route, navigation }) => {
       <View style={styles.speaker}>
         <Speaker text={textToSpeak} style={styles.textButton}></Speaker>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Email2", { readText: route.params.readText })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Email2"}
+        back={"WelcomeTutorials"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );

@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import BottomButton from "../../components/BottomButtons";
 import AutoReadText from "../../components/AutoReadText";
 
 import {
@@ -34,18 +35,12 @@ const WelcomeSpeech2 = ({ route, navigation }) => {
       <View style={styles.container2}>
         <Text style={styles.text2}>{textToSpeak2}</Text>
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("WelcomeIntroductoryVideo", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"WelcomeIntroductoryVideo"}
+        back={"WelcomeSpeech"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -79,34 +74,12 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
   text2: {
-    //marginTop: "%",
     textAlign: "center",
     fontSize: 60,
   },
   speaker: {
     position: "relative",
     bottom: "10%",
-    //width: 100,
-  },
-  buttonView: {
-    width: "100%",
-    position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonContainer: {
-    width: "25%",
-    marginBottom: "20%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonText: {
-    fontSize: 60,
   },
 });
 

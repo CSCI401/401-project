@@ -5,18 +5,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TextInput,
-  Button,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  ImageBackground,
-} from "react-native";
+import BottomButton from "../../components/BottomButtons";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 
 var textToSpeak = "You can also search for an app with the name.";
 
@@ -36,18 +26,12 @@ const Gesture12 = ({ route, navigation }) => {
         source={require("../../assets/firescreenshot.png")}
         resizeMode="stretch"
       />
-      <View style={styles.appButtonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Gesture13", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.appButtonContainer}
-        >
-          <Text style={styles.appButtonText}>Next</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomButton
+        next={"Gesture13"}
+        back={"Gesture11"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -62,9 +46,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    //flex: 1,
     position: "relative",
-    //top: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -75,40 +57,15 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     fontSize: 55,
   },
-  appButtonText: {
-    fontSize: 60,
-  },
-  appButtonView: {
-    width: "100%",
-    textAlign: "center",
-    // justifyContent: "center",
-    alignItems: "center",
-  },
-  appButtonContainer: {
-    //top: "60%",
-    //position: "absolute",
-    //padding: "1%",
-    marginTop: "10%",
-    width: "25%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   speakerContainer: {
-    width: "100%",
+    marginBottom: "5%",
     position: "relative",
-    alignItems: "center",
-    textAlign: "center",
   },
   textButton: {
     flexDirection: "row",
     width: "100%",
     flex: 1,
     position: "relative",
-    //top: "20%",
     justifyContent: "flex-end",
     alignItems: "center",
     textAlign: "center",
@@ -128,7 +85,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     left: "25%",
-    top: "6%",
-    // left: 150,
+    top: "5%",
+    marginBottom: "7%",
   },
 });

@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
+import BottomButton from "../../components/BottomButtons";
 
 import {
   StyleSheet,
@@ -27,27 +28,21 @@ const Telecare3 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speaker}>
-        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-      </View>
       <View style={styles.image1}>
         <Image
           style={styles.image2}
           source={require("../../assets/keckwaitingroom.png")}
         />
       </View>
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Telecare4", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.speaker}>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
+      <BottomButton
+        next={"Telecare4"}
+        back={"Telecare2"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -75,7 +70,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "7%",
+    bottom: "6%",
   },
   image1: {
     width: "100%",
@@ -88,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    bottom: "0%",
+    bottom: "15%",
     width: 500,
     height: 400,
     resizeMode: "contain",

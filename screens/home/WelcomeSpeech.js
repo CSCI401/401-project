@@ -1,8 +1,10 @@
-import React from "react";
+// import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import React, { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-community/async-storage";
 
 import {
   StyleSheet,
@@ -18,15 +20,35 @@ import {
 } from "react-native";
 
 const WelcomeSpeech = ({ navigation }) => {
-  var textToSpeak = "Would you like to be\nread the tutorial?";
+  const [name, setName] = useState("friend");
+  var textToSpeak =`Hi ${name}, would you like to be\nread the tutorial?`
+  const readName = async () => {
+    try {
+      const value = await AsyncStorage.getItem('name');
+      if (value!== null) {
+        setName(value);
+      }else{
+        console.log("value is null");
+      }
+    } catch (error) {
+      console.log("error in readName");
+    }
+  };
+  useEffect(() => {
+    readName();
+  });
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>
+     
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
+      
       <View style={styles.speaker}>
         <Speaker text={textToSpeak}></Speaker>
+     
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -60,6 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
+    top:"2%",
     bottom: "10%",
     justifyContent: "center",
     alignItems: "center",
@@ -71,7 +94,7 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "5%",
+    bottom: "1%",
   },
   buttonView: {
     width: "100%",

@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
+import BottomButton from "../../components/BottomButtons";
 
 import {
   StyleSheet,
@@ -28,25 +29,19 @@ const Telecare1 = ({ route, navigation }) => {
       <View style={styles.container}>
         <Text style={styles.text}>{textToSpeak}</Text>
       </View>
-      <View style={styles.speaker}>
-        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
-      </View>
       <WebView
         style={styles.image2}
         source={{ uri: "https://www.youtube.com/embed/eERe0-E4Zpg" }}
       />
-      <View style={styles.buttonView}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate("Telecare2", {
-              readText: route.params.readText,
-            })
-          }
-          style={styles.YesButtonContainer}
-        >
-          <Text style={styles.YesButtonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.speaker}>
+        <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
+      <BottomButton
+        next={"Telecare2"}
+        back={"WelcomeTutorials"}
+        navigation={navigation}
+        readText={route.params.readText}
+      ></BottomButton>
       <Footer></Footer>
     </SafeAreaView>
   );
@@ -60,21 +55,18 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     width: "100%",
-    flex: 1,
-    bottom: "10%",
+    top: "5%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    // justifyContent: "center",
-    // alignItems: "center",
     fontSize: 60,
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
+    bottom: "9%",
   },
   image1: {
     width: "100%",
@@ -85,6 +77,7 @@ const styles = StyleSheet.create({
   },
   image2: {
     position: "relative",
+    marginBottom: "20%"
   },
   buttonView: {
     top: "5%",
