@@ -30,7 +30,7 @@ const Gesture6 = ({ route, navigation }) => {
         <View style={styles.container1}>
           <Image
             style={styles.image}
-            source={require("../../assets/firescreenshot.png")}
+            source={require("../../assets/homeButtonScreenshot2.png")}
             resizeMode="stretch"
           />
           <Text style={styles.text}>{textToSpeak}</Text>
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: "55%",
-    height: "60%",
+    width: "50%",
+    height: "65%",
     position: "relative",
     top: "0%",
   },
@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "7%",
     position: "relative",
-    top: "27%",
+    top: "30%",
   },
 });

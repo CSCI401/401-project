@@ -30,7 +30,7 @@ const Gesture8 = ({ route, navigation }) => {
         <View style={styles.container1}>
           <Image
             style={styles.image}
-            source={require("../../assets/firescreenshot.png")}
+            source={require("../../assets/switchPagesButtonScreenshot.png")}
             resizeMode="stretch"
           />
           <Text style={styles.text}>{textToSpeak}</Text>
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: "55%",
-    height: "60%",
+    width: "50%",
+    height: "65%",
     position: "relative",
     top: "0%",
   },
