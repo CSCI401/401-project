@@ -18,7 +18,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-var textToSpeak2 = "First, press the home button to go home";
+var textToSpeak2 = "First, press the home button to go home.";
 
 const Email2 = ({ route, navigation }) => {
   AutoReadText(route.params.readText, textToSpeak2);
