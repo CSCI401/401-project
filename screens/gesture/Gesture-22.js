@@ -6,14 +6,38 @@ import {
   Text,
   ScrollView,
 } from "react-native";
-import React from "react";
 import ScrollPractice from "./ScrollPractice";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Constants from "expo-constants";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 const Gesture22 = ({ route, navigation }) => {
+  const [id, setID] = useState("x");
+  const prepare = async () => {
+    try {
+      const getID = await AsyncStorage.getItem("id");
+      if (getID != null) {
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ gesture22 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
+
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation}></Header>

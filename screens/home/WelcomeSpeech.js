@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-community/async-storage";
+import AutoReadText from "../../components/AutoReadText";
 
 import {
   StyleSheet,
@@ -19,24 +20,35 @@ import {
   ImageBackground,
 } from "react-native";
 
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+
 const WelcomeSpeech = ({ navigation }) => {
-  const [name, setName] = useState("friend");
+  
+  const [name, setName] = useState("");
+  const [id, setID] = useState("x");
   var textToSpeak =`Hi ${name}, would you like to be\nread the tutorial?`
-  const readName = async () => {
+
+  const prepare = async () => {
     try {
-      const value = await AsyncStorage.getItem('name');
-      if (value!== null) {
-        setName(value);
-      }else{
-        console.log("value is null");
+      const getName = await AsyncStorage.getItem("name");
+      const getID = await AsyncStorage.getItem("id");
+      if (getName != null && getID != null) {
+        setName(getName);
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ wifi3 :increment }).catch(e=>{console.log(e)});
       }
+
     } catch (error) {
-      console.log("error in readName");
+      console.log("error in prepare");
     }
   };
   useEffect(() => {
-    readName();
-  });
+    prepare();
+  },[]);
 
   return (
     <SafeAreaView style={styles.outerContainer}>

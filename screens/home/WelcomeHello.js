@@ -40,7 +40,7 @@ const WelcomeHello = ({ navigation }) => {
     .collection("ScreenVisits")
     .doc(test_user_id)
     .set({
-      home1:0,
+      home1:1,
       home2:0,
       home3:0,
       home4:0,
@@ -108,7 +108,7 @@ const WelcomeHello = ({ navigation }) => {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
-    navigation.navigate("WelcomeSpeech");
+    navigation.navigate("WelcomeIntroductoryVideo");
     WelcomeIntroductoryVideo
   }
   

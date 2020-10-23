@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
@@ -6,10 +5,36 @@ import AutoReadText from "../../components/AutoReadText";
 import BottomButton from "../../components/BottomButtons";
 import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 
-var textToSpeak = "Click on an app icon to open the app.\n";
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 
 const Gesture11 = ({ route, navigation }) => {
+  var textToSpeak = "Click on an app icon to open the app.\n";
   AutoReadText(route.params.readText, textToSpeak);
+
+  const [id, setID] = useState("x");
+  const prepare = async () => {
+    try {
+      const getID = await AsyncStorage.getItem("id");
+      if (getID != null) {
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ gesture11 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
+  
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

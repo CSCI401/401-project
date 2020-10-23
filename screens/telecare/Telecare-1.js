@@ -1,10 +1,8 @@
-import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import BottomButton from "../../components/BottomButtons";
-
 import {
   StyleSheet,
   Text,
@@ -20,9 +18,34 @@ import {
 import { WebView } from "react-native-webview";
 import AutoReadText from "../../components/AutoReadText";
 
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 const Telecare1 = ({ route, navigation }) => {
   var textToSpeak = "Telecare Introduction\n";
   AutoReadText(route.params.readText, textToSpeak);
+  const [id, setID] = useState("x");
+  const prepare = async () => {
+    try {
+      const getID = await AsyncStorage.getItem("id");
+      if (getID != null) {
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ telecare1 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

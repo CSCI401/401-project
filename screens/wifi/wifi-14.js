@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import {
@@ -11,10 +10,34 @@ import {
 import AutoReadText from "../../components/AutoReadText";
 import Speaker from "../../components/Speaker";
 
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 const Wifi14 = ({ route, navigation }) => {
   const textToSpeak =
     "You might have selected the wrong wifi or entered a wrong password. Please go back to previous steps and try again. If it still doesn't work, please call a family member or technician to help you.";
   AutoReadText(route.params.readText, textToSpeak);
+  const [id, setID] = useState("x");
+  const prepare = async () => {
+    try {
+      const getID = await AsyncStorage.getItem("id");
+      if (getID != null) {
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ wifi14 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

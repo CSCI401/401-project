@@ -69,14 +69,12 @@ import WelcomeSpeech2 from "./screens/home/WelcomeSpeech2.js";
 import WelcomeIntroductoryVideo from "./screens/home/WelcomeIntroductoryVideo.js";
 import WelcomeThankYou from "./screens/home/WelcomeThankYou.js";
 import WelcomeTutorials from "./screens/home/WelcomeTutorials.js";
-
+import { YellowBox } from 'react-native';
 const Stack = createStackNavigator();
 
 export default function App() {
-  //return <WelcomeHello />;
-  //return <WelcomeSpeech2 />;
-  //ignore the error
-  console.ignoredYellowBox = ['Setting a timer'];
+
+  YellowBox.ignoreWarnings(['Setting a timer']);
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="WelcomeHello">

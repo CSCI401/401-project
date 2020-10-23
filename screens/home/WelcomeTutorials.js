@@ -1,4 +1,3 @@
-import React from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -16,7 +15,32 @@ import {
   ImageBackground,
 } from "react-native";
 
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 const WelcomeTutorials = ({ route, navigation }) => {
+  const [id, setID] = useState("x");
+  const prepare = async () => {
+    try {
+      const getID = await AsyncStorage.getItem("id");
+      if (getID != null) {
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ home6 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
+
   return (
     <SafeAreaView style={styles.outerContainer}>
       <Header navigation={navigation}></Header>

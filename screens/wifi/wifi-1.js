@@ -6,9 +6,11 @@ import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
 import BottomButton from "../../components/BottomButtons";
+
 import AsyncStorage from "@react-native-community/async-storage";
 import React, { useEffect, useState } from "react";
-import { firestore } from "../../config/firebase";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
 
 import {
   StyleSheet,
@@ -31,34 +33,19 @@ const Wifi1 = ({ route, navigation }) => {
       if (getName != null && getID != null) {
         setName(getName);
         setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ wifi1 :increment }).catch(e=>{console.log(e)});
       }
+
     } catch (error) {
       console.log("error in prepare");
     }
   };
-
   useEffect(() => {
     prepare();
-    var number = 0;
-    var docRef = firestore.collection("ScreenVisits").doc(id);
-    docRef
-      .get()
-      .then(function (doc) {
-        if (doc.exists) {
-          const data = doc.data();
-          number = data.wifi1;
-          console.log("line 57 number is ", number);
-        } else {
-          console.log("No such document!");
-        }
-      })
-      .catch(function (error) {
-        console.log("Error getting document:", error);
-      });
-
-    //need to figure out why it's not updating firestore
-    var setWithMerge = docRef.set({ wifi1: number + 1 }, { merge: true });
-  });
+  },[]);
 
   return (
     <SafeAreaView style={styles.outerContainer}>

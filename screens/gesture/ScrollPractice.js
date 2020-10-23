@@ -1,4 +1,3 @@
-import React from "react";
 import {
   View,
   Image,
@@ -13,7 +12,13 @@ import Constants from "expo-constants";
 import * as Speech from "expo-speech";
 import AutoReadText from "../../components/AutoReadText";
 
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
+
 export default class App extends React.Component {
+  
   speak() {
     var textToSpeak =
       "Drag your finger from the bottom of the screen to the top to scroll!";

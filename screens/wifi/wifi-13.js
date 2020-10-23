@@ -9,29 +9,39 @@ import {
   TouchableOpacity,
 } from "react-native";
 import AutoReadText from "../../components/AutoReadText";
-import AsyncStorage from "@react-native-community/async-storage";
-import React, { useEffect, useState } from "react";
 import Speaker from "../../components/Speaker";
+
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
 
 const Wifi13 = ({ route, navigation }) => {
    AutoReadText(route.params.readText, textToSpeak);
    const [name, setName] = useState("friend");
+   const [id, setID] = useState("x");
+
    var textToSpeak =`Congratulations ${name}! You are done setting up the WiFi!`
-   const readName = async () => {
-     try {
-       const value = await AsyncStorage.getItem('name');
-       if (value!== null) {
-         setName(value);
-       }else{
-         console.log("value is null");
-       }
-     } catch (error) {
-       console.log("error in readName");
-     }
-   };
-   useEffect(() => {
-     readName();
-   });
+   const prepare = async () => {
+    try {
+      const getName = await AsyncStorage.getItem("name");
+      const getID = await AsyncStorage.getItem("id");
+      if (getName != null && getID != null) {
+        setName(getName);
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ wifi13 :increment }).catch(e=>{console.log(e)});
+      }
+
+    } catch (error) {
+      console.log("error in prepare");
+    }
+  };
+  useEffect(() => {
+    prepare();
+  },[]);
 
 
   return (

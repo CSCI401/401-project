@@ -19,27 +19,34 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
 
 const Gesture1 = ({ route, navigation }) => {
   console.log(route);
   AutoReadText(route.params.readText, textToSpeak);
-  const [name, setName] = useState("friend");
+  const [name, setName] = useState("");
   var textToSpeak = `Hello ${name},\n Welcome to the gesture tutorial!`;
-  const readName = async () => {
+  const prepare = async () => {
     try {
-      const value = await AsyncStorage.getItem("name");
-      if (value !== null) {
-        setName(value);
-      } else {
-        console.log("value is null");
+      const getName = await AsyncStorage.getItem("name");
+      const getID = await AsyncStorage.getItem("id");
+      if (getName != null && getID != null) {
+        setName(getName);
+        setID(getID);
+        console.log(id);
+        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const increment = firebase.firestore.FieldValue.increment(1);
+        ref.update({ gesture1  :increment }).catch(e=>{console.log(e)});
       }
+
     } catch (error) {
-      console.log("error in readName");
+      console.log("error in prepare");
     }
   };
   useEffect(() => {
-    readName();
-  });
+    prepare();
+  },[]);
 
   return (
     <SafeAreaView style={styles.outerContainer}>

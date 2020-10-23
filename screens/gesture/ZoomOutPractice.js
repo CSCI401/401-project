@@ -1,6 +1,10 @@
-import React from "react";
 import { View, Image, Text, StyleSheet, Button } from "react-native";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
+
+import React, { useEffect, useState } from "react";
+import { firestore} from "../../config/firebase";
+import * as firebase from "firebase"
+import AsyncStorage from "@react-native-community/async-storage";
 
 export default class App extends React.Component {
   render() {
