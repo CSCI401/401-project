@@ -18,10 +18,9 @@ import {
   ImageBackground,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { firestore} from "../../config/firebase";
-import * as firebase from "firebase"
+import { firestore } from "../../config/firebase";
+import * as firebase from "firebase";
 import AsyncStorage from "@react-native-community/async-storage";
-
 
 const WelcomeIntroductoryVideo = ({ route, navigation }) => {
   var textToSpeak = "Let's explain this app.\n";
@@ -34,18 +33,19 @@ const WelcomeIntroductoryVideo = ({ route, navigation }) => {
       if (getID != null) {
         setID(getID);
         console.log(id);
-        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const ref = firestore.collection("ScreenVisits").doc(getID);
         const increment = firebase.firestore.FieldValue.increment(1);
-        ref.update({ home2 :increment }).catch(e=>{console.log(e)});
+        ref.update({ home2: increment }).catch((e) => {
+          console.log(e);
+        });
       }
-
     } catch (error) {
       console.log("error in prepare");
     }
   };
   useEffect(() => {
     prepare();
-  },[]);
+  }, []);
 
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -90,10 +90,11 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     fontSize: 60,
+    marginBottom: "-33%",
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
+    marginBottom: "15%",
   },
   image1: {
     width: "100%",
@@ -106,29 +107,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    bottom: "20%",
+    marginBottom: "20%",
     width: 500,
     height: 300,
-  },
-  buttonView: {
-    width: "100%",
-    position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonContainer: {
-    width: "25%",
-    marginBottom: "20%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonText: {
-    fontSize: 60,
   },
 });
 

@@ -19,8 +19,8 @@ import {
 } from "react-native";
 
 import React, { useEffect, useState } from "react";
-import { firestore} from "../../config/firebase";
-import * as firebase from "firebase"
+import { firestore } from "../../config/firebase";
+import * as firebase from "firebase";
 import AsyncStorage from "@react-native-community/async-storage";
 
 const WelcomeThankYou = ({ route, navigation }) => {
@@ -35,18 +35,19 @@ const WelcomeThankYou = ({ route, navigation }) => {
       if (getID != null) {
         setID(getID);
         console.log(id);
-        const ref = firestore.collection('ScreenVisits').doc(getID);
+        const ref = firestore.collection("ScreenVisits").doc(getID);
         const increment = firebase.firestore.FieldValue.increment(1);
-        ref.update({ home5 :increment }).catch(e=>{console.log(e)});
+        ref.update({ home5: increment }).catch((e) => {
+          console.log(e);
+        });
       }
-
     } catch (error) {
       console.log("error in prepare");
     }
   };
   useEffect(() => {
     prepare();
-  },[]);
+  }, []);
 
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    marginBottom: "10%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -88,28 +89,8 @@ const styles = StyleSheet.create({
   },
   speaker: {
     position: "relative",
-    bottom: "15%",
-    //width: 100,
-  },
-  buttonView: {
-    width: "100%",
-    position: "relative",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonContainer: {
-    width: "25%",
     marginBottom: "15%",
-    borderWidth: 3,
-    borderRadius: 20,
-    borderColor: "black",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  YesButtonText: {
-    fontSize: 60,
+    //width: 100,
   },
 });
 
