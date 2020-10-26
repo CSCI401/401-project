@@ -45,7 +45,7 @@ const Wifi3 = ({ route, navigation }) => {
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
-          source={require("../../assets/wifi3.png")}
+          source={require("../../assets/settingScreenshot.png")}
         />
       </View>
       <View style={styles.speaker}>
@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     top: "20%",
-    width: 200,
-    height: 300,
+    width: 350,
+    height: 350,
   },
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
-    bottom: "10%",
+    bottom: "5%",
   },
 });
