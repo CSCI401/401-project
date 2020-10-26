@@ -50,7 +50,7 @@ const Wifi4 = ({ route, navigation }) => {
         />
         <Image
           style={styles.image1}
-          source={require("../../assets/wifi4.png")}
+          source={require("../../assets/wifi4new.png")}
         />
       </View>
       <View style={styles.speaker}>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    top: "10%",
+    top: "5%",
     flex: 1,
     alignItems: "center",
     textAlign: "center",
@@ -83,13 +83,14 @@ const styles = StyleSheet.create({
   image1: {
     alignItems: "center",
     position: "absolute",
-    top: "22%",
-    width: 200,
-    height: 300,
+    top: "10%",
+    width: 400,
+    height: 450,
   },
   image2: {
     position: "absolute",
-    top: "10%",
+    right: "5%",
+    top: "40%",
     width: 70,
     height: 70,
   },

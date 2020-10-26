@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   container: {
     width: "100%",
-    top: "10%",
+    top: "1%",
     flex: 1,
     alignItems: "center",
     textAlign: "center",
@@ -83,14 +83,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     top: "20%",
-    width: 200,
-    height: 300,
+    width: 300,
+    height: 450,
   },
   text: {
     textAlign: "center",
     fontSize: 40,
   },
   speaker: {
-    bottom: "10%",
+    bottom: "5%",
   },
 });
