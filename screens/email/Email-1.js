@@ -26,11 +26,11 @@ import * as firebase from "firebase";
 
 const Gesture1 = ({ route, navigation }) => {
   console.log(route);
-  AutoReadText(route.params.readText, textToSpeak);
   const [name, setName] = useState("");
   const [id, setID] = useState("x");
   var textToSpeak = `Hello ${name}, \n Welcome to the email tutorial!`;
-  
+  AutoReadText(route.params.readText, textToSpeak);
+
   const prepare = async () => {
     try {
       const getName = await AsyncStorage.getItem("name");
