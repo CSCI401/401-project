@@ -16,12 +16,10 @@ import * as firebase from "firebase"
 import AsyncStorage from "@react-native-community/async-storage";
 
 const Wifi2 = ({ route, navigation }) => {
-
   var textToSpeak = "First, you need to \n swipe down from the top.";
-  AutoReadText(route.params.readText, textToSpeak);
   const [id, setID] = useState("x");
-  
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

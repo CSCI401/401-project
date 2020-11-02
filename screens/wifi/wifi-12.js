@@ -20,10 +20,10 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Wifi12 = ({ route, navigation }) => {
   const textToSpeak =
     "To see if you have connected successfully, swipe down again and check if you can see this.";
-  AutoReadText(route.params.readText, textToSpeak);
 
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

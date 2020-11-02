@@ -26,10 +26,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Gesture14 = ({ route, navigation }) => {
   var textToSpeak =
   "Touch the screen and pinch your fingers to zoom out. Watch the demonstration below. \n";
-  AutoReadText(route.params.readText, textToSpeak);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

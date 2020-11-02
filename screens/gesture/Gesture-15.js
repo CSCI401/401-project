@@ -28,10 +28,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Gesture15 = ({ route, navigation }) => {
   var textToSpeak =
   "Zoom out on the next page to see the full flower. \n \n Hit next when done.";
-
-  AutoReadText(route.params.readText, textToSpeak);
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

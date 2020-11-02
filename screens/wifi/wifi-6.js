@@ -18,9 +18,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Wifi6 = ({ route, navigation }) => {
   var textToSpeak =
     "Next, you need to select your wifi and enter the passwords.\n \nDo you know what they are?";
-  AutoReadText(route.params.readText, textToSpeak);
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

@@ -20,13 +20,12 @@ import {
 } from "react-native";
 
 const Wifi1 = ({ route, navigation }) => {
-  AutoReadText(route.params.readText, textToSpeak);
-
   const [name, setName] = useState("friend");
   const [id, setID] = useState("x");
-  var textToSpeak = `Hello ${name}, would you like to be\nread the tutorial?`;
+  var textToSpeak = `Hello ${name}, welcome to the \nWifi tutorial!`;
 
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getName = await AsyncStorage.getItem("name");
       const getID = await AsyncStorage.getItem("id");

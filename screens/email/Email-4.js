@@ -25,9 +25,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 const Email4 = ({ route, navigation }) => {
   var textToSpeak2 = "Next, click on the email app.";
-  AutoReadText(route.params.readText, textToSpeak2);
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak2);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

@@ -27,10 +27,9 @@ import * as firebase from "firebase"
 const Gesture5 = ({ route, navigation }) => {
   var textToSpeak =
   "The back button will take you back\n to the most recent page in the app.";
-  AutoReadText(route.params.readText, textToSpeak);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

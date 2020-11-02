@@ -15,10 +15,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 const Gesture12 = ({ route, navigation }) => {
   var textToSpeak = "You can also search for an app with the name.";
-  AutoReadText(route.params.readText, textToSpeak);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

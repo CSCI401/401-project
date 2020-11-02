@@ -24,10 +24,11 @@ import * as firebase from "firebase"
 
 const Gesture1 = ({ route, navigation }) => {
   console.log(route);
-  AutoReadText(route.params.readText, textToSpeak);
+  
   const [name, setName] = useState("");
   var textToSpeak = `Hello ${name},\n Welcome to the gesture tutorial!`;
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getName = await AsyncStorage.getItem("name");
       const getID = await AsyncStorage.getItem("id");

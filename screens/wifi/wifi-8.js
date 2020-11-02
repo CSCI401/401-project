@@ -19,9 +19,10 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Wifi8 = ({ route, navigation }) => {
   var textToSpeak =
     "Your router might look similar to these. Can you find your router?";
-  AutoReadText(route.params.readText, textToSpeak);
+  
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

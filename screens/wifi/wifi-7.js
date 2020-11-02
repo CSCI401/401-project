@@ -26,9 +26,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Wifi7 = ({ route, navigation }) => {
   var textToSpeak =
     "Usually, your WiFi username and password can be found on the router. Click next to see a picture example.";
-  AutoReadText(route.params.readText, textToSpeak);
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

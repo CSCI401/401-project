@@ -29,10 +29,9 @@ const Gesture17 = ({ route, navigation }) => {
   var textToSpeak =
   "Touch the screen and unpinch your fingers to zoom in.\n Watch the demonstration below.";
   console.log(navigation);
-  AutoReadText(route.params.readText, textToSpeak);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

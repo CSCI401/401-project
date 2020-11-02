@@ -29,9 +29,8 @@ const Gesture1 = ({ route, navigation }) => {
   const [name, setName] = useState("");
   const [id, setID] = useState("x");
   var textToSpeak = `Hello ${name}, \n Welcome to the email tutorial!`;
-  AutoReadText(route.params.readText, textToSpeak);
-
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getName = await AsyncStorage.getItem("name");
       const getID = await AsyncStorage.getItem("id");

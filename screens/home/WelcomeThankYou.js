@@ -26,10 +26,10 @@ import AsyncStorage from "@react-native-community/async-storage";
 const WelcomeThankYou = ({ route, navigation }) => {
   var textToSpeak =
     "Thanks for watching the video.\n\nNow we will go to the home screen.";
-  AutoReadText(route.params.readText, textToSpeak);
-
+  
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

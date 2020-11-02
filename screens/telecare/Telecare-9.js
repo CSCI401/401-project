@@ -26,9 +26,10 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Telecare9 = ({ route, navigation }) => {
   var textToSpeak =
     'If you are willing to have the appointment, click "Sign".\n';
-  AutoReadText(route.params.readText, textToSpeak);
+  
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

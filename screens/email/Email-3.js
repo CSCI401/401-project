@@ -26,11 +26,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 const Email3 = ({ route, navigation }) => {
   var textToSpeak2 = "Then, swipe up from the home button to see your apps.";
-
-  AutoReadText(route.params.readText, textToSpeak2);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak2);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {

@@ -28,10 +28,9 @@ import * as firebase from "firebase"
 const Gesture3 = ({ route, navigation }) => {
   var textToSpeak1 = "Here is the power button.";
   var textToSpeak2 = "Here are\n the \nvolume buttons.";
-  AutoReadText(route.params.readText, textToSpeak1 + textToSpeak2);
-
   const [id, setID] = useState("x");
   const prepare = async () => {
+    AutoReadText(route.params.readText, textToSpeak1 + textToSpeak2);
     try {
       const getID = await AsyncStorage.getItem("id");
       if (getID != null) {
