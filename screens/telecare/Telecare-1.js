@@ -55,7 +55,7 @@ const Telecare1 = ({ route, navigation }) => {
       </View>
       <WebView
         style={styles.image2}
-        source={{ uri: "https://www.youtube.com/embed/eERe0-E4Zpg" }}
+        source={{ uri: "https://www.youtube.com/embed/Psv5214ZBTI"}}
       />
       <View style={styles.speaker}>
         <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
