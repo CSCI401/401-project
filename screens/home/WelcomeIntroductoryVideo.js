@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Speaker from "../../components/Speaker";
 import AutoReadText from "../../components/AutoReadText";
 import BottomButton from "../../components/BottomButtons";
+import { WebView } from "react-native-webview";
 
 import {
   StyleSheet,
@@ -56,11 +57,10 @@ const WelcomeIntroductoryVideo = ({ route, navigation }) => {
       <View style={styles.speaker}>
         <Speaker style={styles.speakerInner} text={textToSpeak}></Speaker>
       </View>
-      <View style={styles.image1}>
-        <Image
-          style={styles.image2}
-          source={require("../../assets/IntroductoryVideoScreenshot.png")}
-        />
+      <WebView
+        source={{ uri: "https://www.youtube.com/embed/Psv5214ZBTI"}}
+      />
+      <View style={styles.video}>
       </View>
       <BottomButton
         next={"WelcomeThankYou"}
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     flex: 1,
-    bottom: "10%",
+    // bottom: "25%",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -90,10 +90,11 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     fontSize: 60,
-    marginBottom: "-33%",
+    // marginBottom: "-33%",
   },
   speaker: {
     position: "relative",
+    marginTop: "-25%",
     marginBottom: "15%",
   },
   image1: {
@@ -102,6 +103,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+  },
+  video: {
+      marginBottom: "10%"
   },
   image2: {
     justifyContent: "center",
