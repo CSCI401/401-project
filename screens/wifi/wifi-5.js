@@ -47,7 +47,7 @@ const Wifi5 = ({ route, navigation }) => {
         <Text style={styles.text}>{textToSpeak}</Text>
         <Image
           style={styles.image}
-          source={require("../../assets/wifi5new.png")}
+          source={require("../../assets/wifi5.png")}
         />
       </View>
       <View style={styles.speaker}>

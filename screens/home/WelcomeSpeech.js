@@ -64,8 +64,10 @@ const WelcomeSpeech = ({ navigation }) => {
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
-          onPress={() =>
+          onPress={() =>{
             navigation.navigate("WelcomeSpeech2", { readText: true })
+          }
+            
           }
           style={styles.YesButtonContainer}
         >

@@ -21,7 +21,7 @@ function Header(props) {
         onPress={
           () =>
             props.navigation.navigate("WelcomeTutorials", {
-              readText: false,
+              readText: props.readText
             })
           //console.log("Something")
         }
